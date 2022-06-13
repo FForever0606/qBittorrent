@@ -134,30 +134,30 @@ void FileLogger::addLogMessage(const Log::Msg &msg)
     switch (msg.type)
     {
     case Log::INFO:
-        stream << "(I) ";
+        stream << u"(I) ";
         break;
     case Log::WARNING:
-        stream << "(W) ";
+        stream << u"(W) ";
         break;
     case Log::CRITICAL:
-        stream << "(C) ";
+        stream << u"(C) ";
         break;
     default:
-        stream << "(N) ";
+        stream << u"(N) ";
     }
 
-    stream << QDateTime::fromMSecsSinceEpoch(msg.timestamp).toString(Qt::ISODate) << " - " << msg.message << '\n';
+    stream << QDateTime::fromMSecsSinceEpoch(msg.timestamp).toString(Qt::ISODate) << u" - " << msg.message << u'\n';
 
     if (m_backup && (m_logFile.size() >= m_maxSize))
     {
         closeLogFile();
         int counter = 0;
-        Path backupLogFilename = m_path + ".bak";
+        Path backupLogFilename = m_path + u".bak";
 
         while (backupLogFilename.exists())
         {
             ++counter;
-            backupLogFilename = m_path + ".bak" + QString::number(counter);
+            backupLogFilename = m_path + u".bak" + QString::number(counter);
         }
 
         Utils::Fs::renameFile(m_path, backupLogFilename);

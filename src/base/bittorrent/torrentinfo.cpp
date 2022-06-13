@@ -38,9 +38,9 @@
 #include <QString>
 #include <QStringList>
 #include <QUrl>
-#include <QVector>
 
 #include "base/global.h"
+#include "base/path.h"
 #include "base/utils/fs.h"
 #include "base/utils/io.h"
 #include "base/utils/misc.h"
@@ -275,9 +275,8 @@ QVector<TrackerEntry> TorrentInfo::trackers() const
 
     QVector<TrackerEntry> ret;
     ret.reserve(static_cast<decltype(ret)::size_type>(trackers.size()));
-
     for (const lt::announce_entry &tracker : trackers)
-        ret.append({QString::fromStdString(tracker.url)});
+        ret.append({QString::fromStdString(tracker.url), tracker.tier});
 
     return ret;
 }
@@ -406,14 +405,6 @@ int TorrentInfo::fileIndex(const Path &filePath) const
     }
 
     return -1;
-}
-
-TorrentContentLayout TorrentInfo::contentLayout() const
-{
-    if (!isValid())
-        return TorrentContentLayout::Original;
-
-    return detectContentLayout(filePaths());
 }
 
 std::shared_ptr<lt::torrent_info> TorrentInfo::nativeInfo() const

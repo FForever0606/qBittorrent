@@ -31,6 +31,8 @@
 #include <optional>
 
 #ifdef Q_OS_WIN
+#include <memory>
+
 #include <windows.h>
 #include <powrprof.h>
 #include <Shlobj.h>
@@ -61,7 +63,6 @@
 #include <QDBusInterface>
 #endif
 
-#include "base/path.h"
 #include "base/types.h"
 #include "base/unicodestrings.h"
 #include "base/utils/fs.h"
@@ -265,7 +266,7 @@ QString Utils::Misc::friendlyUnit(const qint64 bytes, const bool isSpeed)
     if (!result)
         return QCoreApplication::translate("misc", "Unknown", "Unknown (size)");
     return Utils::String::fromDouble(result->value, friendlyUnitPrecision(result->unit))
-           + QString::fromUtf8(C_NON_BREAKING_SPACE)
+           + C_NON_BREAKING_SPACE
            + unitString(result->unit, isSpeed);
 }
 
@@ -297,8 +298,8 @@ bool Utils::Misc::isPreviewable(const Path &filePath)
 {
     const QString mime = QMimeDatabase().mimeTypeForFile(filePath.data(), QMimeDatabase::MatchExtension).name();
 
-    if (mime.startsWith(QLatin1String("audio"), Qt::CaseInsensitive)
-        || mime.startsWith(QLatin1String("video"), Qt::CaseInsensitive))
+    if (mime.startsWith(u"audio", Qt::CaseInsensitive)
+        || mime.startsWith(u"video", Qt::CaseInsensitive))
     {
         return true;
     }
@@ -354,9 +355,9 @@ bool Utils::Misc::isPreviewable(const Path &filePath)
 QString Utils::Misc::userFriendlyDuration(const qlonglong seconds, const qlonglong maxCap)
 {
     if (seconds < 0)
-        return QString::fromUtf8(C_INFINITY);
+        return C_INFINITY;
     if ((maxCap >= 0) && (seconds >= maxCap))
-        return QString::fromUtf8(C_INFINITY);
+        return C_INFINITY;
 
     if (seconds == 0)
         return u"0"_qs;
@@ -394,7 +395,7 @@ QString Utils::Misc::getUserIDString()
     const int UNLEN = 256;
     WCHAR buffer[UNLEN + 1] = {0};
     DWORD buffer_len = sizeof(buffer) / sizeof(*buffer);
-    if (GetUserNameW(buffer, &buffer_len))
+    if (::GetUserNameW(buffer, &buffer_len))
         uid = QString::fromWCharArray(buffer);
 #else
     uid = QString::number(getuid());
@@ -456,7 +457,7 @@ QString Utils::Misc::parseHtmlLinks(const QString &rawText)
     result.replace(reURL, u"\\1<a href=\"\\2\">\\2</a>"_qs);
 
     // Capture links without scheme
-    static const QRegularExpression reNoScheme(u"<a\\s+href=\"(?!https?)([a-zA-Z0-9\\?%=&/_\\.-:#]+)\\s*\">"_qs);
+    const QRegularExpression reNoScheme(u"<a\\s+href=\"(?!https?)([a-zA-Z0-9\\?%=&/_\\.-:#]+)\\s*\">"_qs);
     result.replace(reNoScheme, u"<a href=\"http://\\1\">"_qs);
 
     // to preserve plain text formatting
@@ -499,7 +500,7 @@ QString Utils::Misc::opensslVersionString()
 #else
     static const auto version {QString::fromLatin1(SSLeay_version(SSLEAY_VERSION))};
 #endif
-    return QStringView(version).split(u' ', Qt::SkipEmptyParts).at(1).toString();
+    return version.section(u' ', 1, 1);
 }
 
 QString Utils::Misc::zlibVersionString()
@@ -510,13 +511,13 @@ QString Utils::Misc::zlibVersionString()
 }
 
 #ifdef Q_OS_WIN
-QString Utils::Misc::windowsSystemPath()
+Path Utils::Misc::windowsSystemPath()
 {
-    static const QString path = []() -> QString
+    static const Path path = []() -> Path
     {
         WCHAR systemPath[MAX_PATH] = {0};
         GetSystemDirectoryW(systemPath, sizeof(systemPath) / sizeof(WCHAR));
-        return QString::fromWCharArray(systemPath);
+        return Path(QString::fromWCharArray(systemPath));
     }();
     return path;
 }

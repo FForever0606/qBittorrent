@@ -29,16 +29,18 @@
 
 #include <QtGlobal>
 
-#include <csignal>
 #include <cstdlib>
 #include <memory>
 
-#if defined(Q_OS_UNIX)
+#ifdef Q_OS_UNIX
 #include <sys/resource.h>
 #endif
-#if !defined Q_OS_WIN && !defined Q_OS_HAIKU
+
+#ifndef Q_OS_WIN
+#ifndef Q_OS_HAIKU
 #include <unistd.h>
-#elif defined Q_OS_WIN && defined DISABLE_GUI
+#endif // Q_OS_HAIKU
+#elif defined DISABLE_GUI
 #include <io.h>
 #endif
 
@@ -60,21 +62,9 @@
 Q_IMPORT_PLUGIN(QICOPlugin)
 #endif // QBT_STATIC_QT
 
-#else
-// NoGUI-only includes
+#else // DISABLE_GUI
 #include <cstdio>
 #endif // DISABLE_GUI
-
-#ifdef STACKTRACE
-#ifdef Q_OS_UNIX
-#include "stacktrace.h"
-#else
-#include "stacktrace_win.h"
-#ifndef DISABLE_GUI
-#include "stacktracedialog.h"
-#endif // DISABLE_GUI
-#endif // Q_OS_UNIX
-#endif //STACKTRACE
 
 #include "base/global.h"
 #include "base/preferences.h"
@@ -82,53 +72,29 @@ Q_IMPORT_PLUGIN(QICOPlugin)
 #include "base/version.h"
 #include "application.h"
 #include "cmdoptions.h"
+#include "signalhandler.h"
 #include "upgrade.h"
 
 #ifndef DISABLE_GUI
 #include "gui/utils.h"
 #endif
 
-// Signal handlers
-void sigNormalHandler(int signum);
-#ifdef STACKTRACE
-void sigAbnormalHandler(int signum);
-#endif
-// sys_signame[] is only defined in BSD
-const char *const sysSigName[] =
-{
-#if defined(Q_OS_WIN)
-    "", "", "SIGINT", "", "SIGILL", "", "SIGABRT_COMPAT", "", "SIGFPE", "",
-    "", "SIGSEGV", "", "", "", "SIGTERM", "", "", "", "",
-    "", "SIGBREAK", "SIGABRT", "", "", "", "", "", "", "",
-    "", ""
-#else
-    "", "SIGHUP", "SIGINT", "SIGQUIT", "SIGILL", "SIGTRAP", "SIGABRT", "SIGBUS", "SIGFPE", "SIGKILL",
-    "SIGUSR1", "SIGSEGV", "SIGUSR2", "SIGPIPE", "SIGALRM", "SIGTERM", "SIGSTKFLT", "SIGCHLD", "SIGCONT", "SIGSTOP",
-    "SIGTSTP", "SIGTTIN", "SIGTTOU", "SIGURG", "SIGXCPU", "SIGXFSZ", "SIGVTALRM", "SIGPROF", "SIGWINCH", "SIGIO",
-    "SIGPWR", "SIGUNUSED"
-#endif
-};
-
-#if !(defined Q_OS_WIN && !defined DISABLE_GUI) && !defined Q_OS_HAIKU
-void reportToUser(const char *str);
-#endif
-
 void displayVersion();
 bool userAgreesWithLegalNotice();
 void displayBadArgMessage(const QString &message);
 
-#if !defined(DISABLE_GUI)
+#ifndef DISABLE_GUI
 void showSplashScreen();
 #endif  // DISABLE_GUI
 
-#if defined(Q_OS_UNIX)
+#ifdef Q_OS_UNIX
 void adjustFileDescriptorLimit();
 #endif
 
 // Main
 int main(int argc, char *argv[])
 {
-#if defined(Q_OS_UNIX)
+#ifdef Q_OS_UNIX
     adjustFileDescriptorLimit();
 #endif
 
@@ -165,7 +131,7 @@ int main(int argc, char *argv[])
                 return EXIT_SUCCESS;
             }
             throw CommandLineParameterError(QObject::tr("%1 must be the single command line parameter.")
-                                     .arg(QLatin1String("-v (or --version)")));
+                                     .arg(u"-v (or --version)"_qs));
         }
 #endif
         if (params.showHelp)
@@ -176,12 +142,8 @@ int main(int argc, char *argv[])
                 return EXIT_SUCCESS;
             }
             throw CommandLineParameterError(QObject::tr("%1 must be the single command line parameter.")
-                                 .arg(QLatin1String("-h (or --help)")));
+                                 .arg(u"-h (or --help)"_qs));
         }
-
-        // Set environment variable
-        if (!qputenv("QBITTORRENT", QBT_VERSION))
-            fprintf(stderr, "Couldn't set environment variable...\n");
 
         const bool firstTimeUser = !Preferences::instance()->getAcceptedLegal();
         if (firstTimeUser)
@@ -212,11 +174,9 @@ int main(int argc, char *argv[])
             if (params.shouldDaemonize)
             {
                 throw CommandLineParameterError(QObject::tr("You cannot use %1: qBittorrent is already running for this user.")
-                                     .arg(QLatin1String("-d (or --daemon)")));
+                                     .arg(u"-d (or --daemon)"_qs));
             }
-            else
 #endif
-            qDebug("qBittorrent is already running for this user.");
 
             QThread::msleep(300);
             app->sendParams(params.paramList());
@@ -224,7 +184,7 @@ int main(int argc, char *argv[])
             return EXIT_SUCCESS;
         }
 
-#if defined(Q_OS_WIN)
+#ifdef Q_OS_WIN
         // This affects only Windows apparently and Qt5.
         // When QNetworkAccessManager is instantiated it regularly starts polling
         // the network interfaces to see what's available and their status.
@@ -243,7 +203,7 @@ int main(int argc, char *argv[])
 #endif
 #endif // Q_OS_WIN
 
-#if defined(Q_OS_MACOS)
+#ifdef Q_OS_MACOS
         // Since Apple made difficult for users to set PATH, we set here for convenience.
         // Users are supposed to install Homebrew Python for search function.
         // For more info see issue #5571.
@@ -302,12 +262,7 @@ int main(int argc, char *argv[])
             showSplashScreen();
 #endif
 
-        signal(SIGINT, sigNormalHandler);
-        signal(SIGTERM, sigNormalHandler);
-#ifdef STACKTRACE
-        signal(SIGABRT, sigAbnormalHandler);
-        signal(SIGSEGV, sigAbnormalHandler);
-#endif
+        registerSignalHandlers();
 
         return app->exec(params.paramList());
     }
@@ -317,63 +272,6 @@ int main(int argc, char *argv[])
         return EXIT_FAILURE;
     }
 }
-
-#if !(defined Q_OS_WIN && !defined DISABLE_GUI) && !defined Q_OS_HAIKU
-void reportToUser(const char *str)
-{
-    const size_t strLen = strlen(str);
-#ifndef Q_OS_WIN
-    if (write(STDERR_FILENO, str, strLen) < static_cast<ssize_t>(strLen))
-    {
-        const auto dummy = write(STDOUT_FILENO, str, strLen);
-#else
-    if (_write(STDERR_FILENO, str, strLen) < static_cast<ssize_t>(strLen))
-    {
-        const auto dummy = _write(STDOUT_FILENO, str, strLen);
-#endif
-        Q_UNUSED(dummy);
-    }
-}
-#endif
-
-void sigNormalHandler(int signum)
-{
-#if !(defined Q_OS_WIN && !defined DISABLE_GUI) && !defined Q_OS_HAIKU
-    const char msg1[] = "Catching signal: ";
-    const char msg2[] = "\nExiting cleanly\n";
-    reportToUser(msg1);
-    reportToUser(sysSigName[signum]);
-    reportToUser(msg2);
-#endif // !defined Q_OS_WIN && !defined Q_OS_HAIKU
-    signal(signum, SIG_DFL);
-    qApp->exit();  // unsafe, but exit anyway
-}
-
-#ifdef STACKTRACE
-void sigAbnormalHandler(int signum)
-{
-    const char *sigName = sysSigName[signum];
-#if !(defined Q_OS_WIN && !defined DISABLE_GUI) && !defined Q_OS_HAIKU
-    const char msg[] = "\n\n*************************************************************\n"
-        "Please file a bug report at http://bug.qbittorrent.org and provide the following information:\n\n"
-        "qBittorrent version: " QBT_VERSION "\n\n"
-        "Caught signal: ";
-    reportToUser(msg);
-    reportToUser(sigName);
-    reportToUser("\n");
-    print_stacktrace();  // unsafe
-#endif
-
-#if defined Q_OS_WIN && !defined DISABLE_GUI
-    StacktraceDialog dlg;  // unsafe
-    dlg.setStacktraceString(QLatin1String(sigName), straceWin::getBacktrace());
-    dlg.exec();
-#endif
-
-    signal(signum, SIG_DFL);
-    raise(signum);
-}
-#endif // STACKTRACE
 
 #if !defined(DISABLE_GUI)
 void showSplashScreen()
@@ -401,7 +299,7 @@ void displayBadArgMessage(const QString &message)
     const QString help = QObject::tr("Run application with -h option to read about command line parameters.");
 #if defined(Q_OS_WIN) && !defined(DISABLE_GUI)
     QMessageBox msgBox(QMessageBox::Critical, QObject::tr("Bad command line"),
-                       message + QLatin1Char('\n') + help, QMessageBox::Ok);
+                       (message + u'\n' + help), QMessageBox::Ok);
     msgBox.show(); // Need to be shown or to moveToCenter does not work
     msgBox.move(Utils::Gui::screenCenter(&msgBox));
     msgBox.exec();
@@ -419,10 +317,10 @@ bool userAgreesWithLegalNotice()
     Q_ASSERT(!pref->getAcceptedLegal());
 
 #ifdef DISABLE_GUI
-    const QString eula = QString::fromLatin1("\n*** %1 ***\n").arg(QObject::tr("Legal Notice"))
-        + QObject::tr("qBittorrent is a file sharing program. When you run a torrent, its data will be made available to others by means of upload. Any content you share is your sole responsibility.") + "\n\n"
-        + QObject::tr("No further notices will be issued.") + "\n\n"
-        + QObject::tr("Press %1 key to accept and continue...").arg("'y'") + '\n';
+    const QString eula = u"\n*** %1 ***\n"_qs.arg(QObject::tr("Legal Notice"))
+        + QObject::tr("qBittorrent is a file sharing program. When you run a torrent, its data will be made available to others by means of upload. Any content you share is your sole responsibility.") + u"\n\n"
+        + QObject::tr("No further notices will be issued.") + u"\n\n"
+        + QObject::tr("Press %1 key to accept and continue...").arg(u"'y'"_qs) + u'\n';
     printf("%s", qUtf8Printable(eula));
 
     const char ret = getchar(); // Read pressed key
@@ -452,7 +350,7 @@ bool userAgreesWithLegalNotice()
     return false;
 }
 
-#if defined(Q_OS_UNIX)
+#ifdef Q_OS_UNIX
 void adjustFileDescriptorLimit()
 {
     rlimit limit {};
