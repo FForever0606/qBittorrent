@@ -31,13 +31,10 @@
 
 #include <cmath>
 
+#include <QList>
 #include <QLocale>
 #include <QRegularExpression>
-#include <QVector>
-
-#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
-#include <QRegExp>
-#endif
+#include <QStringList>
 
 // to send numbers instead of strings with suffixes
 QString Utils::String::fromDouble(const double n, const int precision)
@@ -52,29 +49,46 @@ QString Utils::String::fromDouble(const double n, const int precision)
     return QLocale::system().toString(std::floor(n * prec) / prec, 'f', precision);
 }
 
-#if (QT_VERSION >= QT_VERSION_CHECK(6, 0, 0))
 QString Utils::String::wildcardToRegexPattern(const QString &pattern)
 {
-    // replace [ and ] with [[] and []], respectively
-    QString escapedPattern = pattern;
-    escapedPattern.replace(QRegularExpression(u"\\[|\\]"_qs), u"[\\0]"_qs);
-
-    return QRegularExpression::wildcardToRegularExpression(escapedPattern, QRegularExpression::UnanchoredWildcardConversion);
+    return QRegularExpression::wildcardToRegularExpression(pattern, QRegularExpression::UnanchoredWildcardConversion);
 }
-#else
-// This is marked as internal in QRegExp.cpp, but is exported. The alternative would be to
-// copy the code from QRegExp::wc2rx().
-QString qt_regexp_toCanonical(const QString &pattern, QRegExp::PatternSyntax patternSyntax);
 
-QString Utils::String::wildcardToRegexPattern(const QString &pattern)
+QStringList Utils::String::splitCommand(const QString &command)
 {
-    // replace [ and ] with [[] and []], respectively
-    QString escapedPattern = pattern;
-    escapedPattern.replace(QRegularExpression(u"\\[|\\]"_qs), u"[\\0]"_qs);
+    QStringList ret;
+    ret.reserve(32);
 
-    return qt_regexp_toCanonical(escapedPattern, QRegExp::Wildcard);
+    bool inQuotes = false;
+    QString tmp;
+    for (const QChar c : command)
+    {
+        if (c == u' ')
+        {
+            if (!inQuotes)
+            {
+                if (!tmp.isEmpty())
+                {
+                    ret.append(tmp);
+                    tmp.clear();
+                }
+
+                continue;
+            }
+        }
+        else if (c == u'"')
+        {
+            inQuotes = !inQuotes;
+        }
+
+        tmp.append(c);
+    }
+
+    if (!tmp.isEmpty())
+        ret.append(tmp);
+
+    return ret;
 }
-#endif
 
 std::optional<bool> Utils::String::parseBool(const QString &string)
 {
@@ -104,15 +118,4 @@ std::optional<double> Utils::String::parseDouble(const QString &string)
         return result;
 
     return std::nullopt;
-}
-
-QString Utils::String::join(const QList<QStringView> &strings, const QStringView separator)
-{
-    if (strings.empty())
-        return {};
-
-    QString ret = strings[0].toString();
-    for (int i = 1; i < strings.count(); ++i)
-        ret += (separator + strings[i]);
-    return ret;
 }

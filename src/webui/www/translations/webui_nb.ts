@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="nb">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="nb">
 <context>
     <name>AboutDlg</name>
     <message>
@@ -37,8 +39,36 @@
         <translation>Lag undermappe</translation>
     </message>
     <message>
-        <source>Don&apos;t create subfolder</source>
+        <source>Don't create subfolder</source>
         <translation>Ikke lag undermappe</translation>
+    </message>
+    <message>
+        <source>Manual</source>
+        <translation>Manuell</translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Automatisk</translation>
+    </message>
+    <message>
+        <source>Metadata received</source>
+        <translation>Metadata mottatt</translation>
+    </message>
+    <message>
+        <source>Files checked</source>
+        <translation>Filer er kontrollert</translation>
+    </message>
+    <message>
+        <source>Stop condition:</source>
+        <translation>Stopp-betingelse:</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Ingen</translation>
+    </message>
+    <message>
+        <source>Add to top of queue</source>
+        <translation>Legg øverst i køen</translation>
     </message>
 </context>
 <context>
@@ -75,16 +105,20 @@
         <translation>Sett torrenter på pause</translation>
     </message>
     <message>
-        <source>Delete torrents</source>
-        <translation>Slett torrenter</translation>
-    </message>
-    <message>
         <source>New Category</source>
         <translation>Ny kategori</translation>
     </message>
     <message>
         <source>Edit category...</source>
         <translation>Rediger kategori …</translation>
+    </message>
+    <message>
+        <source>Remove torrents</source>
+        <translation>Fjern torrenter</translation>
+    </message>
+    <message>
+        <source>Add subcategory...</source>
+        <translation>Legg til underkategori …</translation>
     </message>
 </context>
 <context>
@@ -155,27 +189,27 @@
     </message>
     <message>
         <source>The port used for the Web UI must be between 1 and 65535.</source>
-        <translation>Porten som brukes for nettgrensesnittet må være mellom 1 og 65535.</translation>
+        <translation type="vanished">Porten som brukes for nettgrensesnittet må være mellom 1 og 65535.</translation>
     </message>
     <message>
         <source>Unable to log in, qBittorrent is probably unreachable.</source>
-        <translation>Ikke i stand til å logge inn, qBittorrent er sannsynligvis unåelig.</translation>
+        <translation type="vanished">Ikke i stand til å logge inn, qBittorrent er sannsynligvis unåelig.</translation>
     </message>
     <message>
         <source>Invalid Username or Password.</source>
-        <translation>Ugyldig brukernavn eller passord.</translation>
+        <translation type="vanished">Ugyldig brukernavn eller passord.</translation>
     </message>
     <message>
         <source>Username</source>
-        <translation>Brukernavn</translation>
+        <translation type="vanished">Brukernavn</translation>
     </message>
     <message>
         <source>Password</source>
-        <translation>Passord</translation>
+        <translation type="vanished">Passord</translation>
     </message>
     <message>
         <source>Login</source>
-        <translation>Logg inn</translation>
+        <translation type="vanished">Logg inn</translation>
     </message>
     <message>
         <source>Apply</source>
@@ -270,10 +304,6 @@
         <translation>Last opp lokal torrent</translation>
     </message>
     <message>
-        <source>Are you sure you want to delete the selected torrents from the transfer list?</source>
-        <translation>Er du sikker på at du vil slette valgte torrenter fra overføringslisten?</translation>
-    </message>
-    <message>
         <source>Save</source>
         <translation>Lagre</translation>
     </message>
@@ -319,7 +349,7 @@
     </message>
     <message>
         <source>qBittorrent has been shutdown</source>
-        <translation>qBittorrent er avsluttet</translation>
+        <translation type="vanished">qBittorrent er avsluttet</translation>
     </message>
     <message>
         <source>Open documentation</source>
@@ -335,7 +365,7 @@
     </message>
     <message>
         <source>JavaScript Required! You must enable JavaScript for the Web UI to work properly</source>
-        <translation>JavaScript kreves. Du må aktivere JavaScript for at nettgrensesnittet skal virke.</translation>
+        <translation type="vanished">JavaScript kreves. Du må aktivere JavaScript for at nettgrensesnittet skal virke.</translation>
     </message>
     <message>
         <source>Name cannot be empty</source>
@@ -360,6 +390,22 @@
     <message>
         <source>Original author</source>
         <translation>Opprinnelig opphavsperson</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to remove the selected torrents from the transfer list?</source>
+        <translation>Er du sikker på at du vil slette valgte torrenter fra overføringslisten?</translation>
+    </message>
+    <message>
+        <source>The port used for the WebUI must be between 1 and 65535.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>%1 has been shutdown</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>JavaScript Required! You must enable JavaScript for the WebUI to work properly</source>
+        <translation type="unfinished" />
     </message>
 </context>
 <context>
@@ -425,10 +471,6 @@
         <translation>Sett på pause</translation>
     </message>
     <message>
-        <source>Delete</source>
-        <translation>Slett</translation>
-    </message>
-    <message>
         <source>Pause All</source>
         <translation>Sett alt på pause</translation>
     </message>
@@ -467,7 +509,7 @@
     <message>
         <source>[D: %1, U: %2] qBittorrent %3</source>
         <comment>D = Download; U = Upload; %3 is qBittorrent version</comment>
-        <translation>[↓: %1, ↑: %2] qBittorrent %3</translation>
+        <translation type="vanished">[↓: %1, ↑: %2] qBittorrent %3</translation>
     </message>
     <message>
         <source>Alternative speed limits</source>
@@ -546,10 +588,6 @@
         <translation>Ikon for nedlastingshastighet</translation>
     </message>
     <message>
-        <source>Connection status</source>
-        <translation>Tilkoblingsstatus</translation>
-    </message>
-    <message>
         <source>Alternative speed limits: On</source>
         <translation>Alternative hastighetsgrenser: På</translation>
     </message>
@@ -572,6 +610,34 @@
     <message>
         <source>Filters Sidebar</source>
         <translation>Sidestolpe med filter</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Avbryt</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Fjern</translation>
+    </message>
+    <message>
+        <source>Would you like to resume all torrents?</source>
+        <translation>Vil du gjenoppta alle torrenter?</translation>
+    </message>
+    <message>
+        <source>Would you like to pause all torrents?</source>
+        <translation>Vil du sette alle torrenter på pause?</translation>
+    </message>
+    <message>
+        <source>Execution Log</source>
+        <translation>Utførelseslogg</translation>
+    </message>
+    <message>
+        <source>Log</source>
+        <translation>Logg</translation>
+    </message>
+    <message>
+        <source>[D: %1, U: %2]</source>
+        <translation type="unfinished" />
     </message>
 </context>
 <context>
@@ -598,7 +664,7 @@
     </message>
     <message>
         <source>Web UI</source>
-        <translation>Nettgrensesnitt</translation>
+        <translation type="vanished">Nettgrensesnitt</translation>
     </message>
     <message>
         <source>Language</source>
@@ -611,10 +677,6 @@
     <message>
         <source>Email notification upon download completion</source>
         <translation>Epost-varsling ved nedlastingsfullførelse</translation>
-    </message>
-    <message>
-        <source>Run external program on torrent completion</source>
-        <translation>Kjør eksternt program ved ferdigstillelse av torrenter</translation>
     </message>
     <message>
         <source>IP Filtering</source>
@@ -749,10 +811,6 @@
         <translation>Type:</translation>
     </message>
     <message>
-        <source>(None)</source>
-        <translation>(Ingen)</translation>
-    </message>
-    <message>
         <source>SOCKS4</source>
         <translation>SOCKS4</translation>
     </message>
@@ -775,10 +833,6 @@
     <message>
         <source>Use proxy for peer connections</source>
         <translation>Bruk mellomtjener for likemannstilkoblinger</translation>
-    </message>
-    <message>
-        <source>Use proxy only for torrents</source>
-        <translation>Bruk mellomtjener kun for torrenter</translation>
     </message>
     <message>
         <source>Filter path (.dat, .p2p, .p2b):</source>
@@ -955,16 +1009,16 @@
         <translation>%T: Nåværende sporer</translation>
     </message>
     <message>
-        <source>Tip: Encapsulate parameter with quotation marks to avoid text being cut off at whitespace (e.g., &quot;%N&quot;)</source>
-        <translation>Tips: Innkapsle parameter med anførselstegn for å unngå at teksten blir avskåret ved mellomrom (f.eks., &quot;%N&quot;)</translation>
+        <source>Tip: Encapsulate parameter with quotation marks to avoid text being cut off at whitespace (e.g., "%N")</source>
+        <translation>Tips: Innkapsle parameter med anførselstegn for å unngå at teksten blir avskåret ved mellomrom (f.eks., "%N")</translation>
     </message>
     <message>
         <source>The Web UI username must be at least 3 characters long.</source>
-        <translation>Brukernavn for nettgrensesnittet må være minst 3 tegn.</translation>
+        <translation type="vanished">Brukernavn for nettgrensesnittet må være minst 3 tegn.</translation>
     </message>
     <message>
         <source>The Web UI password must be at least 6 characters long.</source>
-        <translation>Passordet for nettgrensesnittet må være minst 6 tegn.</translation>
+        <translation type="vanished">Passordet for nettgrensesnittet må være minst 6 tegn.</translation>
     </message>
     <message>
         <source>minutes</source>
@@ -1004,7 +1058,7 @@
     </message>
     <message>
         <source>Use alternative Web UI</source>
-        <translation>Bruk et alternativt nettgrensesnitt</translation>
+        <translation type="vanished">Bruk et alternativt nettgrensesnitt</translation>
     </message>
     <message>
         <source>Default Save Path:</source>
@@ -1012,7 +1066,7 @@
     </message>
     <message>
         <source>The alternative Web UI files location cannot be blank.</source>
-        <translation>Filplasseringen til det alternative nettgrensesnittet kan ikke være blank.</translation>
+        <translation type="vanished">Filplasseringen til det alternative nettgrensesnittet kan ikke være blank.</translation>
     </message>
     <message>
         <source>Do not start the download automatically</source>
@@ -1123,16 +1177,8 @@
         <translation>Anti-snylting</translation>
     </message>
     <message>
-        <source>Enable OS cache:</source>
-        <translation>Aktiver OS-hurtiglager:</translation>
-    </message>
-    <message>
         <source>When ratio reaches</source>
         <translation>Når forholdet når</translation>
-    </message>
-    <message>
-        <source>When seeding time reaches</source>
-        <translation>Når delingstiden når</translation>
     </message>
     <message>
         <source>Allow multiple connections from the same IP address:</source>
@@ -1179,10 +1225,6 @@
         <translation>libtorrent-seksjon</translation>
     </message>
     <message>
-        <source>Outgoing ports (Min) [0: Disabled]:</source>
-        <translation>Utgående porter (Min) [0: Deaktivert]:</translation>
-    </message>
-    <message>
         <source>Recheck torrents on completion:</source>
         <translation>Gjennomsjekk torrenter på nytt ved fullførelse:</translation>
     </message>
@@ -1201,10 +1243,6 @@
     <message>
         <source>Remove torrent</source>
         <translation>Fjern torrent</translation>
-    </message>
-    <message>
-        <source>Outgoing ports (Max) [0: Disabled]:</source>
-        <translation>Utgående porter (Maks) [0: Deaktivert]:</translation>
     </message>
     <message>
         <source>Asynchronous I/O threads:</source>
@@ -1283,24 +1321,12 @@
         <translation>bannlys i:</translation>
     </message>
     <message>
-        <source>Use piece extent affinity (requires libtorrent &gt;= 1.2.2):</source>
-        <translation>La likemenn foretrekke nærliggende deler (krever libtorrent &gt;= 1.2.2):</translation>
-    </message>
-    <message>
-        <source>Stop tracker timeout:</source>
-        <translation>Tidsavbrudd for sporers stopp-hendelse:</translation>
-    </message>
-    <message>
         <source>Ban client after consecutive failures:</source>
         <translation>Bannlys klient etter påfølgende feil:</translation>
     </message>
     <message>
         <source>Enable cookie Secure flag (requires HTTPS)</source>
         <translation>Slå på Secure-flagget i informasjonskapsler (HTTPS)</translation>
-    </message>
-    <message>
-        <source>UPnP lease duration [0: Permanent lease]:</source>
-        <translation>UPnP-adressens varighet [0: Fast adresse]:</translation>
     </message>
     <message>
         <source>Header: value pairs, one per line</source>
@@ -1317,14 +1343,6 @@
     <message>
         <source>Enable fetching RSS feeds</source>
         <translation>Slå på innhenting av RSS-informasjonskanaler</translation>
-    </message>
-    <message>
-        <source>Hashing threads (requires libtorrent &gt;= 2.0):</source>
-        <translation>Hashetråder (krever libtorrent &gt;= 2.0):</translation>
-    </message>
-    <message>
-        <source>Coalesce reads &amp; writes (requires libtorrent &lt; 2.0):</source>
-        <translation>Bland sammen lesinger og skrivinger (krever libtorrent &lt; 2.0):</translation>
     </message>
     <message>
         <source>Peer turnover threshold percentage:</source>
@@ -1367,10 +1385,6 @@
         <translation>Maksimalt antall artikler per mating:</translation>
     </message>
     <message>
-        <source>Max concurrent HTTP announces (requires libtorrent &gt;= 1.2.7):</source>
-        <translation>Største antall samtidige HTTP-annonseringer (krever libtorrent &gt;= 1.2.7):</translation>
-    </message>
-    <message>
         <source> min</source>
         <translation>min</translation>
     </message>
@@ -1395,24 +1409,12 @@
         <translation>RSS-episodesmartfilter</translation>
     </message>
     <message>
-        <source>Disk cache (requires libtorrent &lt; 2.0):</source>
-        <translation>Diskhurtiglager (krever libtorrent &lt; 2.0):</translation>
-    </message>
-    <message>
-        <source>Disk cache expiry interval (requires libtorrent &lt; 2.0):</source>
-        <translation>Utløpsintervall for diskhurtiglager (krever libtorrent &lt; 2.0):</translation>
-    </message>
-    <message>
         <source>Validate HTTPS tracker certificate:</source>
         <translation>Valider sertifikat til HTTPS-sporer:</translation>
     </message>
     <message>
         <source>Peer connection protocol:</source>
         <translation>Protokoll for tilkoblinger fra likemenn:</translation>
-    </message>
-    <message>
-        <source>Support internationalized domain name (IDN) (requires libtorrent &gt;= 1.2.12):</source>
-        <translation>Støtte for internasjonale domenenavn (IDN) (krever libtorrent &gt;= 1.2.12):</translation>
     </message>
     <message>
         <source>Torrent content layout:</source>
@@ -1427,7 +1429,7 @@
         <translation>Opprinnelig</translation>
     </message>
     <message>
-        <source>Don&apos;t create subfolder</source>
+        <source>Don't create subfolder</source>
         <translation>Ikke lag undermappe</translation>
     </message>
     <message>
@@ -1511,12 +1513,396 @@
         <translation>Dette alternativet har mindre effekt på Linux</translation>
     </message>
     <message>
-        <source>Disk IO type (libtorrent &gt;= 2.0; requires restart):</source>
-        <translation>Type disk-IU (libtorrent &gt;= 2.0; krever omstart):</translation>
+        <source>It controls the internal state update interval which in turn will affect UI updates</source>
+        <translation>Styrer internt oppdateringsintervall for status, som igjen påvirker oppdatering av brukergrensesnitt</translation>
+    </message>
+    <message>
+        <source>Disk IO read mode:</source>
+        <translation>Lesemodus for disk-I/U:</translation>
+    </message>
+    <message>
+        <source>Disable OS cache</source>
+        <translation>Slå av OS-hurtiglager</translation>
+    </message>
+    <message>
+        <source>Disk IO write mode:</source>
+        <translation>Lesemodus for disk-I/U:</translation>
+    </message>
+    <message>
+        <source>Use piece extent affinity:</source>
+        <translation>La likemenn foretrekke nærliggende deler</translation>
+    </message>
+    <message>
+        <source>Max concurrent HTTP announces:</source>
+        <translation>Største antall samtidige HTTP-annonseringer:</translation>
+    </message>
+    <message>
+        <source>Enable OS cache</source>
+        <translation>Aktiver OS-hurtiglager</translation>
+    </message>
+    <message>
+        <source>Refresh interval:</source>
+        <translation>Oppdateringsintervall:</translation>
+    </message>
+    <message>
+        <source>ms</source>
+        <translation>ms</translation>
+    </message>
+    <message>
+        <source>Excluded file names</source>
+        <translation>Utelatte filnavn</translation>
+    </message>
+    <message>
+        <source>Support internationalized domain name (IDN):</source>
+        <translation>Støtte for internasjonale domenenavn (IDN):</translation>
+    </message>
+    <message>
+        <source>Run external program on torrent finished</source>
+        <translation>Kjør eksternt program når torrent er fullført</translation>
+    </message>
+    <message>
+        <source>Whitelist for filtering HTTP Host header values.
+In order to defend against DNS rebinding attack,
+you should put in domain names used by WebUI server.
+
+Use ';' to split multiple entries. Can use wildcard '*'.</source>
+        <translation>Hviteliste for filtrering av HTTP-vertshodeverdier.
+For å kunne beskytte mot DNS-ombindingsangrep,
+burde du skrive inn domenenavn brukt av vevgrensesnittjeneren.
+
+Bruk ";" for å splitte flerfoldige oppføringer. Jokertegnet "*" kan brukes.</translation>
+    </message>
+    <message>
+        <source>Run external program on torrent added</source>
+        <translation>Kjør eksternt program når torrent legges til</translation>
+    </message>
+    <message>
+        <source>HTTPS certificate should not be empty</source>
+        <translation>HTTPS-sertifikatet kan ikke være tomt</translation>
+    </message>
+    <message>
+        <source>Specify reverse proxy IPs (or subnets, e.g. 0.0.0.0/24) in order to use forwarded client address (X-Forwarded-For header). Use ';' to split multiple entries.</source>
+        <translation>Angi IP-er til reverserte mellomtjenere (f.eks. 0.0.0.0/24 for subnett) for å bruke videresendte klientaddresser (attributtet X-Forwarded-For). Bruk «;» for å adskille flere oppføringer.</translation>
+    </message>
+    <message>
+        <source>HTTPS key should not be empty</source>
+        <translation>HTTPS-nøkkel kan ikke være tom</translation>
+    </message>
+    <message>
+        <source>Run external program</source>
+        <translation>Kjør eksternt program</translation>
+    </message>
+    <message>
+        <source>Files checked</source>
+        <translation>Filer er kontrollert</translation>
+    </message>
+    <message>
+        <source>Enable port forwarding for embedded tracker:</source>
+        <translation>Slå på portviderekobling for innebygd sporer:</translation>
+    </message>
+    <message>
+        <source>If checked, hostname lookups are done via the proxy.</source>
+        <translation>Velg for å slå opp vertsnavn via mellomtjener.</translation>
+    </message>
+    <message>
+        <source>Metadata received</source>
+        <translation>Metadata mottatt</translation>
+    </message>
+    <message>
+        <source>Torrent stop condition:</source>
+        <translation>Stopp-betingelse for torrent:</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <translation>Ingen</translation>
+    </message>
+    <message>
+        <source>Example: 172.17.32.0/24, fdff:ffff:c8::/40</source>
+        <translation>Eksempel: 172.17.32.0/24, fdff:ffff:c8::/40</translation>
+    </message>
+    <message>
+        <source>SQLite database (experimental)</source>
+        <translation>SQLite-database (eksperimentell)</translation>
+    </message>
+    <message>
+        <source>Resume data storage type (requires restart):</source>
+        <translation>Lagringstype for gjenopptakelse (krever omstart):</translation>
+    </message>
+    <message>
+        <source>Fastresume files</source>
+        <translation>Filer for rask gjenopptakelse</translation>
+    </message>
+    <message>
+        <source>Backup the log file after:</source>
+        <translation>Sikkerhetskopier loggfilen etter:</translation>
+    </message>
+    <message>
+        <source>days</source>
+        <translation>dager</translation>
+    </message>
+    <message>
+        <source>Log file</source>
+        <translation>Loggfil</translation>
+    </message>
+    <message>
+        <source>Behavior</source>
+        <translation>Oppførsel</translation>
+    </message>
+    <message>
+        <source>Delete backup logs older than:</source>
+        <translation>Slett sikkerhetskopier av loggføringer som er eldre enn:</translation>
+    </message>
+    <message>
+        <source>Use proxy for BitTorrent purposes</source>
+        <translation>Bruk mellomtjener for BitTorrent-formål</translation>
+    </message>
+    <message>
+        <source>years</source>
+        <translation>år</translation>
+    </message>
+    <message>
+        <source>Save path:</source>
+        <translation>Lagringssti:</translation>
+    </message>
+    <message>
+        <source>months</source>
+        <translation>måneder</translation>
+    </message>
+    <message>
+        <source>Remember Multi-Rename settings</source>
+        <translation>Husk oppsett av massiv navneendring</translation>
+    </message>
+    <message>
+        <source>Use proxy for general purposes</source>
+        <translation>Bruk alltid mellomtjener</translation>
+    </message>
+    <message>
+        <source>Use proxy for RSS purposes</source>
+        <translation>Bruk mellomtjener for informasjonskanaler (RSS)</translation>
+    </message>
+    <message>
+        <source>Disk cache expiry interval (requires libtorrent &amp;lt; 2.0):</source>
+        <translation type="vanished">Utløpsintervall for diskhurtiglager (krever libtorrent &amp;lt; 2.0):</translation>
+    </message>
+    <message>
+        <source>Physical memory (RAM) usage limit (applied if libtorrent &amp;gt;= 2.0):</source>
+        <translation type="vanished">Begrens bruk av fysisk minne (RAM) (kun hvis libtorrent &amp;gt;= 2.0):</translation>
+    </message>
+    <message>
+        <source>Disk cache (requires libtorrent &amp;lt; 2.0):</source>
+        <translation type="vanished">Diskhurtiglager (krever libtorrent &amp;lt; 2.0):</translation>
+    </message>
+    <message>
+        <source>Socket send buffer size [0: system default]:</source>
+        <translation>Bufferstørrelse for sending over socket [0: systemets standardverdi]</translation>
+    </message>
+    <message>
+        <source>Coalesce reads &amp;amp; writes (requires libtorrent &amp;lt; 2.0):</source>
+        <translation type="vanished">Bland sammen lesinger og skrivinger (krever libtorrent &amp;lt; 2.0):</translation>
+    </message>
+    <message>
+        <source>Outgoing ports (Max) [0: disabled]:</source>
+        <translation>Utgående porter (Maks) [0: Deaktivert]:</translation>
+    </message>
+    <message>
+        <source>Socket receive buffer size [0: system default]:</source>
+        <translation>Bufferstørrelse for mottak over socket [0: systemets standardverdi]</translation>
+    </message>
+    <message>
+        <source>Use Subcategories</source>
+        <translation>Bruk underkategorier</translation>
+    </message>
+    <message>
+        <source>Disk IO type (libtorrent &amp;gt;= 2.0; requires restart):</source>
+        <translation type="vanished">Type disk-IU (libtorrent &amp;gt;= 2.0; krever omstart):</translation>
+    </message>
+    <message>
+        <source>Add to top of queue</source>
+        <translation>Legg øverst i køen</translation>
+    </message>
+    <message>
+        <source>Write-through (requires libtorrent &amp;gt;= 2.0.6)</source>
+        <translation type="vanished">Skriv-gjennom (krever libtorrent &amp;gt;= 2.0.6)</translation>
+    </message>
+    <message>
+        <source>Stop tracker timeout [0: disabled]:</source>
+        <translation>Tidsavbrudd for sporers stopp-hendelse [0: Deaktivert]</translation>
+    </message>
+    <message>
+        <source>Outgoing ports (Min) [0: disabled]:</source>
+        <translation>Utgående porter (Min) [0: Deaktivert]:</translation>
+    </message>
+    <message>
+        <source>Hashing threads (requires libtorrent &amp;gt;= 2.0):</source>
+        <translation type="vanished">Hashetråder (krever libtorrent &amp;gt;= 2.0):</translation>
+    </message>
+    <message>
+        <source>UPnP lease duration [0: permanent lease]:</source>
+        <translation>UPnP-adressens varighet [0: Fast adresse]:</translation>
+    </message>
+    <message>
+        <source>Bdecode depth limit:</source>
+        <translation>Dybdegrense for bdecode:</translation>
+    </message>
+    <message>
+        <source>Bdecode token limit:</source>
+        <translation>Tokengrense for bdecode:</translation>
+    </message>
+    <message>
+        <source>When total seeding time reaches</source>
+        <translation>Når total delingstid når</translation>
+    </message>
+    <message>
+        <source>(None)</source>
+        <translation>(Ingen)</translation>
+    </message>
+    <message>
+        <source>I2P inbound length (requires libtorrent &amp;gt;= 2.0):</source>
+        <translation type="vanished">I2P innkommende lengde (krever libtorrent &amp;gt;= 2.0):</translation>
+    </message>
+    <message>
+        <source>Python executable path (may require restart):</source>
+        <translation>Sti til python-fortolker (krever omstart):</translation>
+    </message>
+    <message>
+        <source>Resets to default if empty</source>
+        <translation>Tilbakestill til standardverdi hvis tom</translation>
+    </message>
+    <message>
+        <source>Perform hostname lookup via proxy</source>
+        <translation>Slå opp vertsnavn via mellomtjener</translation>
+    </message>
+    <message>
+        <source>If &amp;quot;mixed mode&amp;quot; is enabled, I2P torrents are allowed to also get peers from other sources than the tracker, and connect to regular IPs, not providing any anonymization. This may be useful if the user is not interested in the anonymization of I2P, but still wants to be able to connect to I2P peers.</source>
+        <translation>Hvis &amp;quo;blandet modus&amp;quot; er slått på, så vil I2P-torrenter kunne få likemenn fra andre kilder enn sporeren og koble til vanlige IP-adresser uten anonymisering. Dette kan være nyttig hvis brukeren ikke er interessert i anonymisering, men likevel vil koble til I2P-likemenn.</translation>
+    </message>
+    <message>
+        <source>I2P inbound quantity (requires libtorrent &amp;gt;= 2.0):</source>
+        <translation type="vanished">I2P innkommende mengde (krever libtorrent &amp;gt;= 2.0):</translation>
+    </message>
+    <message>
+        <source>I2P outbound length (requires libtorrent &amp;gt;= 2.0):</source>
+        <translation type="vanished">I2P utgående lengde (krever libtorrent &amp;gt;= 2.0):</translation>
+    </message>
+    <message>
+        <source>I2P outbound quantity (requires libtorrent &amp;gt;= 2.0):</source>
+        <translation type="vanished">I2P utgående mengde (krever libtorrent &amp;gt;= 2.0):</translation>
+    </message>
+    <message>
+        <source>I2P (Experimental) (requires libtorrent &amp;gt;= 2.0)</source>
+        <translation type="vanished">I2P (eksperimentell) (krever libtorrent &amp;gt;= 2.0):</translation>
+    </message>
+    <message>
+        <source>DHT bootstrap nodes:</source>
+        <translation>Startnoder for DHT:</translation>
+    </message>
+    <message>
+        <source>When inactive seeding time reaches</source>
+        <translation>Når inaktiv delingstid når</translation>
+    </message>
+    <message>
+        <source>Mixed mode</source>
+        <translation>Blandet modus</translation>
+    </message>
+    <message>
+        <source>.torrent file size limit:</source>
+        <translation>Grense for .torrent-filens størrelse:</translation>
+    </message>
+    <message>
+        <source>(Auto detect if empty)</source>
+        <translation>(Gjenkjenn automatisk hvis tom)</translation>
+    </message>
+    <message>
+        <source>Keep unselected files in ".unwanted" folder</source>
+        <translation>Behold fravalgte filer i mappa «.unwanted»</translation>
+    </message>
+    <message>
+        <source>Enable Mark-of-the-Web (MOTW) for downloaded files (require macOS or Windows):</source>
+        <translation>Slå på MOTW (internett-markør) for nedlastede filer (krever macOS eller Windows):</translation>
+    </message>
+    <message>
+        <source> sec</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P outbound quantity:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P inbound quantity:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Hashing threads:</source>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Physical memory (RAM) usage limit:</source>
-        <translation>Grense for bruk av fysisk minne (RAM):</translation>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Use alternative WebUI</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Disk cache expiry interval:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P outbound length:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P (Experimental)</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Disk IO type (requires restart):</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>The alternative WebUI files location cannot be blank.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Disk cache:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Write-through</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>WebUI</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>The WebUI password must be at least 6 characters long.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Coalesce reads &amp;amp; writes:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P inbound length:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>It appends the text to the window title to help distinguish qBittorent instances</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>The WebUI username must be at least 3 characters long.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Same host request delay:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Customize application instance name:</source>
+        <translation type="unfinished" />
     </message>
 </context>
 <context>
@@ -1596,6 +1982,10 @@
     <message>
         <source>Add peers...</source>
         <translation>Legg til likemenn …</translation>
+    </message>
+    <message>
+        <source>Peer ID Client</source>
+        <translation>Likemanns-ID-klient</translation>
     </message>
 </context>
 <context>
@@ -1818,6 +2208,66 @@
         <source>Progress:</source>
         <translation>Framdrift:</translation>
     </message>
+    <message>
+        <source>Use regular expressions</source>
+        <translation>Bruk regulære uttrykk</translation>
+    </message>
+    <message>
+        <source>Filename</source>
+        <translation>Filnavn</translation>
+    </message>
+    <message>
+        <source>Filename + Extension</source>
+        <translation>Filnavn + filtype</translation>
+    </message>
+    <message>
+        <source>Enumerate Files</source>
+        <translation>Tell opp filer</translation>
+    </message>
+    <message>
+        <source>Rename failed: file or folder already exists</source>
+        <translation>Klarte ikke endre navn: Fil eller mappe finnes allerede</translation>
+    </message>
+    <message>
+        <source>Toggle Selection</source>
+        <translation>Veksle utvalg</translation>
+    </message>
+    <message>
+        <source>Replacement Input</source>
+        <translation>Gi erstatning</translation>
+    </message>
+    <message>
+        <source>Replace</source>
+        <translation>Erstatt</translation>
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation>Filtype</translation>
+    </message>
+    <message>
+        <source>Replace All</source>
+        <translation>Erstatt alle</translation>
+    </message>
+    <message>
+        <source>Include files</source>
+        <translation>Ta med filer</translation>
+    </message>
+    <message>
+        <source>Include folders</source>
+        <translation>Ta med mapper</translation>
+    </message>
+    <message>
+        <source>Search Files</source>
+        <translation>Søk filer</translation>
+    </message>
+    <message>
+        <source>Case sensitive</source>
+        <translation>Skill store/små bokstaver</translation>
+    </message>
+    <message>
+        <source>Match all occurrences</source>
+        <translation>Treff alle forekomster</translation>
+    </message>
 </context>
 <context>
     <name>ScanFoldersModel</name>
@@ -2034,6 +2484,14 @@
         <source>Checking (0)</source>
         <translation>Kontrollerer (0)</translation>
     </message>
+    <message>
+        <source>Moving (%1)</source>
+        <translation>Flytter (%1)</translation>
+    </message>
+    <message>
+        <source>Moving (0)</source>
+        <translation>Flytter (0)</translation>
+    </message>
 </context>
 <context>
     <name>TorrentContentModel</name>
@@ -2186,6 +2644,10 @@
         <source>Availability</source>
         <translation>Tilgjengelighet</translation>
     </message>
+    <message>
+        <source>Reannounce In</source>
+        <translation>Reannonsering om</translation>
+    </message>
 </context>
 <context>
     <name>TrackerListWidget</name>
@@ -2242,10 +2704,6 @@
         <translation>Kopier sporerens nettadresse</translation>
     </message>
     <message>
-        <source>Add a new tracker...</source>
-        <translation>Legg til en ny sporer …</translation>
-    </message>
-    <message>
         <source>Edit tracker URL...</source>
         <translation>Rediger sporerens nettadresse …</translation>
     </message>
@@ -2293,16 +2751,28 @@
         <source>Times Downloaded</source>
         <translation>Ganger nedlastet</translation>
     </message>
+    <message>
+        <source>Add trackers...</source>
+        <translation>Legg til sporere …</translation>
+    </message>
+    <message>
+        <source>Renamed</source>
+        <translation>Endret navn</translation>
+    </message>
+    <message>
+        <source>Original</source>
+        <translation>Original</translation>
+    </message>
 </context>
 <context>
     <name>TrackersAdditionDialog</name>
     <message>
-        <source>Trackers addition dialog</source>
-        <translation>Tilleggingsdialog for sporere</translation>
-    </message>
-    <message>
         <source>List of trackers to add (one per line):</source>
         <translation>Liste over sporere som skal legges til (én per linje):</translation>
+    </message>
+    <message>
+        <source>Add trackers</source>
+        <translation>Legg til sporere</translation>
     </message>
 </context>
 <context>
@@ -2399,6 +2869,10 @@
         <source>Trackers</source>
         <translation>Sporere</translation>
     </message>
+    <message>
+        <source>Collapse/expand</source>
+        <translation>Fold sammen/ut</translation>
+    </message>
 </context>
 <context>
     <name>TransferListWidget</name>
@@ -2428,11 +2902,6 @@
         <source>Pause</source>
         <comment>Pause the torrent</comment>
         <translation>Sett på pause</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <comment>Delete the torrent</comment>
-        <translation>Slett</translation>
     </message>
     <message>
         <source>Limit share ratio...</source>
@@ -2507,10 +2976,6 @@
     <message>
         <source>Download in sequential order</source>
         <translation>Last ned i rekkefølge</translation>
-    </message>
-    <message>
-        <source>Force Recheck</source>
-        <translation>Påtving ny gjennomsjekk</translation>
     </message>
     <message>
         <source>New Category</source>
@@ -2592,6 +3057,22 @@
         <source>Export .torrent</source>
         <translation>Eksporter .torrent</translation>
     </message>
+    <message>
+        <source>Remove</source>
+        <translation>Fjern</translation>
+    </message>
+    <message>
+        <source>Rename Files...</source>
+        <translation>Gi filer nytt navn …</translation>
+    </message>
+    <message>
+        <source>Renaming</source>
+        <translation>Endrer navn</translation>
+    </message>
+    <message>
+        <source>Comment</source>
+        <translation>Kommentar</translation>
+    </message>
 </context>
 <context>
     <name>UpDownRatioDialog</name>
@@ -2616,8 +3097,12 @@
         <translation>forhold</translation>
     </message>
     <message>
-        <source>minutes</source>
-        <translation>minutter</translation>
+        <source>total minutes</source>
+        <translation>totalt antall minutter</translation>
+    </message>
+    <message>
+        <source>inactive minutes</source>
+        <translation>antall inaktive minutter</translation>
     </message>
 </context>
 <context>
@@ -2626,16 +3111,12 @@
 <context>
     <name>confirmDeletionDlg</name>
     <message>
-        <source>Deletion confirmation</source>
-        <translation>Slett bekreftelse</translation>
+        <source>Also permanently delete the files</source>
+        <translation>Slett også filene permanent</translation>
     </message>
     <message>
-        <source>Also delete the files on the hard disk</source>
-        <translation>Slett filene på harddisken samtidig</translation>
-    </message>
-    <message>
-        <source>Deletion confirmation - qBittorrent</source>
-        <translation>Slettingsbekreftelse - qBittorrent</translation>
+        <source>Remove torrent(s)</source>
+        <translation>Fjern torrent(er)</translation>
     </message>
 </context>
 <context>
@@ -2829,6 +3310,14 @@
         <source>showing</source>
         <translation>viser</translation>
     </message>
+    <message>
+        <source>Click the "Search plugins..." button at the bottom right of the window to install some.</source>
+        <translation>Klikk knappen «Søk etter programtillegg …» nederst til høyre i vinduet for å installere det.</translation>
+    </message>
+    <message>
+        <source>There aren't any search plugins installed.</source>
+        <translation>Ingen søkeprogramtillegg installert.</translation>
+    </message>
 </context>
 <context>
     <name>PluginSelectDlg</name>
@@ -2857,7 +3346,7 @@
         <translation>Aktivert</translation>
     </message>
     <message>
-        <source>Warning: Be sure to comply with your country&apos;s copyright laws when downloading torrents from any of these search engines.</source>
+        <source>Warning: Be sure to comply with your country's copyright laws when downloading torrents from any of these search engines.</source>
         <translation>Advarsel: Sørg for å overholde ditt lands opphavsrettslovgivning når du laster ned torrenter fra noen av disse søkemotorene.</translation>
     </message>
     <message>
@@ -2953,10 +3442,6 @@
         <translation>Legg til etikett …</translation>
     </message>
     <message>
-        <source>Delete torrents</source>
-        <translation>Slett torrenter</translation>
-    </message>
-    <message>
         <source>Tag:</source>
         <translation>Etikett:</translation>
     </message>
@@ -2979,6 +3464,10 @@
     <message>
         <source>Remove tag</source>
         <translation>Fjern etikett</translation>
+    </message>
+    <message>
+        <source>Remove torrents</source>
+        <translation>Fjern torrenter</translation>
     </message>
 </context>
 <context>
@@ -3472,16 +3961,16 @@ Støtter de følgende formatene: S01E01, 1x1, 2017.12.31, og 31.12.2017 (Datofor
         <translation>Opprinnelig</translation>
     </message>
     <message>
-        <source>Don&apos;t create subfolder</source>
+        <source>Don't create subfolder</source>
         <translation>Ikke lag undermappe</translation>
+    </message>
+    <message>
+        <source>Add Tags:</source>
+        <translation>Legg til etiketter:</translation>
     </message>
 </context>
 <context>
     <name>TrackerFiltersList</name>
-    <message>
-        <source>Delete torrents</source>
-        <translation>Slett torrenter</translation>
-    </message>
     <message>
         <source>Resume torrents</source>
         <translation>Gjenoppta torrenter</translation>
@@ -3498,6 +3987,10 @@ Støtter de følgende formatene: S01E01, 1x1, 2017.12.31, og 31.12.2017 (Datofor
         <source>Pause torrents</source>
         <translation>Sett torrenter på pause</translation>
     </message>
+    <message>
+        <source>Remove torrents</source>
+        <translation>Fjern torrenter</translation>
+    </message>
 </context>
 <context>
     <name>FeedListWidget</name>
@@ -3508,6 +4001,141 @@ Støtter de følgende formatene: S01E01, 1x1, 2017.12.31, og 31.12.2017 (Datofor
     <message>
         <source>Unread</source>
         <translation>Ulest</translation>
+    </message>
+</context>
+<context>
+    <name>ExecutionLogWidget</name>
+    <message>
+        <source>General</source>
+        <translation>Generelt</translation>
+    </message>
+    <message>
+        <source>Blocked</source>
+        <translation>Blokkert</translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Ukjent</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Alle</translation>
+    </message>
+    <message>
+        <source>showing</source>
+        <translation>viser</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Kopier</translation>
+    </message>
+    <message>
+        <source>Select All</source>
+        <translation>Velg alle</translation>
+    </message>
+    <message>
+        <source>ID</source>
+        <translation>ID</translation>
+    </message>
+    <message>
+        <source>Log Type</source>
+        <translation>Loggtype</translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation>Fjern</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Advarsel</translation>
+    </message>
+    <message>
+        <source>Information Messages</source>
+        <translation>Informasjonsmeldinger</translation>
+    </message>
+    <message>
+        <source>Warning Messages</source>
+        <translation>Advarselsmeldinger</translation>
+    </message>
+    <message>
+        <source>Filter logs</source>
+        <translation>Filtrer logger</translation>
+    </message>
+    <message>
+        <source>Blocked IPs</source>
+        <translation>Blokkerte IP-er</translation>
+    </message>
+    <message>
+        <source>out of</source>
+        <translation>av</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Timestamp</source>
+        <translation>Tidsmerke</translation>
+    </message>
+    <message>
+        <source>Clear All</source>
+        <translation>Fjern alle</translation>
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Melding</translation>
+    </message>
+    <message>
+        <source>Log Levels:</source>
+        <translation>Loggnivåer:</translation>
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation>Årsak</translation>
+    </message>
+    <message>
+        <source>item</source>
+        <translation>element</translation>
+    </message>
+    <message>
+        <source>IP</source>
+        <translation>IP</translation>
+    </message>
+    <message>
+        <source>Banned</source>
+        <translation>Bannlyst</translation>
+    </message>
+    <message>
+        <source>Normal Messages</source>
+        <translation>Normale meldinger</translation>
+    </message>
+    <message>
+        <source>Critical</source>
+        <translation>Kritisk</translation>
+    </message>
+    <message>
+        <source>Critical Messages</source>
+        <translation>Kritiske meldinger</translation>
+    </message>
+    <message>
+        <source>Normal</source>
+        <translation>Normal</translation>
+    </message>
+    <message>
+        <source>items</source>
+        <translation>elementer</translation>
+    </message>
+    <message>
+        <source>Results</source>
+        <translation>Resultater</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation>Info</translation>
+    </message>
+    <message>
+        <source>Choose a log level...</source>
+        <translation>Velg loggnivå …</translation>
     </message>
 </context>
 </TS>

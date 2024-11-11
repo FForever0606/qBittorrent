@@ -1,7 +1,7 @@
 /*
  * Bittorrent Client using Qt and libtorrent.
+ * Copyright (C) 2015-2024  Vladimir Golovnev <glassez@yandex.ru>
  * Copyright (C) 2020, Will Da Silva <will@willdasilva.xyz>
- * Copyright (C) 2015, 2018  Vladimir Golovnev <glassez@yandex.ru>
  * Copyright (C) 2006  Christophe Dumez <chris@qbittorrent.org>
  *
  * This program is free software; you can redistribute it and/or
@@ -30,15 +30,14 @@
 
 #pragma once
 
-#include <QList>
 #include <QPointer>
 #include <QWidget>
 
+#include "gui/guiapplicationcomponent.h"
+
 class QEvent;
 class QObject;
-class QTabWidget;
 
-class MainWindow;
 class SearchJobWidget;
 
 namespace Ui
@@ -46,13 +45,13 @@ namespace Ui
     class SearchWidget;
 }
 
-class SearchWidget : public QWidget
+class SearchWidget : public GUIApplicationComponent<QWidget>
 {
     Q_OBJECT
     Q_DISABLE_COPY_MOVE(SearchWidget)
 
 public:
-    explicit SearchWidget(MainWindow *mainWindow);
+    explicit SearchWidget(IGUIApplication *app, QWidget *parent);
     ~SearchWidget() override;
 
     void giveFocusToSearchInput();
@@ -78,10 +77,8 @@ private:
     QString selectedCategory() const;
     QString selectedPlugin() const;
 
-    Ui::SearchWidget *m_ui;
+    Ui::SearchWidget *m_ui = nullptr;
     QPointer<SearchJobWidget> m_currentSearchTab; // Selected tab
     QPointer<SearchJobWidget> m_activeSearchTab; // Tab with running search
-    QList<SearchJobWidget *> m_allTabs; // To store all tabs
-    MainWindow *m_mainWindow;
-    bool m_isNewQueryString;
+    bool m_isNewQueryString = false;
 };

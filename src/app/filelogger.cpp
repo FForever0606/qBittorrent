@@ -32,8 +32,8 @@
 
 #include <QDateTime>
 #include <QDir>
+#include <QList>
 #include <QTextStream>
-#include <QVector>
 
 #include "base/global.h"
 #include "base/logger.h"
@@ -78,7 +78,7 @@ void FileLogger::changePath(const Path &newPath)
 
     closeLogFile();
 
-    m_path = newPath / Path(u"qbittorrent.log"_qs);
+    m_path = newPath / Path(u"qbittorrent.log"_s);
     m_logFile.setFileName(m_path.data());
 
     Utils::Fs::mkpath(newPath);
@@ -89,7 +89,7 @@ void FileLogger::deleteOld(const int age, const FileLogAgeType ageType)
 {
     const QDateTime date = QDateTime::currentDateTime();
     const QDir dir {m_path.parentPath().data()};
-    const QFileInfoList fileList = dir.entryInfoList(QStringList(u"qbittorrent.log.bak*"_qs)
+    const QFileInfoList fileList = dir.entryInfoList(QStringList(u"qbittorrent.log.bak*"_s)
         , (QDir::Files | QDir::Writable), (QDir::Time | QDir::Reversed));
 
     for (const QFileInfo &file : fileList)
@@ -127,26 +127,23 @@ void FileLogger::addLogMessage(const Log::Msg &msg)
     if (!m_logFile.isOpen()) return;
 
     QTextStream stream(&m_logFile);
-#if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
-    stream.setCodec("UTF-8");
-#endif
 
     switch (msg.type)
     {
     case Log::INFO:
-        stream << u"(I) ";
+        stream << QStringView(u"(I) ");
         break;
     case Log::WARNING:
-        stream << u"(W) ";
+        stream << QStringView(u"(W) ");
         break;
     case Log::CRITICAL:
-        stream << u"(C) ";
+        stream << QStringView(u"(C) ");
         break;
     default:
-        stream << u"(N) ";
+        stream << QStringView(u"(N) ");
     }
 
-    stream << QDateTime::fromMSecsSinceEpoch(msg.timestamp).toString(Qt::ISODate) << u" - " << msg.message << u'\n';
+    stream << QDateTime::fromSecsSinceEpoch(msg.timestamp).toString(Qt::ISODate) << QStringView(u" - ") << msg.message << QChar(u'\n');
 
     if (m_backup && (m_logFile.size() >= m_maxSize))
     {

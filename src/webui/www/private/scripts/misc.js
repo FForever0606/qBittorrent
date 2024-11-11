@@ -26,32 +26,83 @@
  * exception statement from your version.
  */
 
-'use strict';
+"use strict";
 
-if (window.qBittorrent === undefined) {
-    window.qBittorrent = {};
-}
-
-window.qBittorrent.Misc = (function() {
-    const exports = function() {
+window.qBittorrent ??= {};
+window.qBittorrent.Misc ??= (() => {
+    const exports = () => {
         return {
+            genHash: genHash,
+            getHost: getHost,
+            createDebounceHandler: createDebounceHandler,
             friendlyUnit: friendlyUnit,
             friendlyDuration: friendlyDuration,
             friendlyPercentage: friendlyPercentage,
             friendlyFloat: friendlyFloat,
             parseHtmlLinks: parseHtmlLinks,
+            parseVersion: parseVersion,
             escapeHtml: escapeHtml,
+            naturalSortCollator: naturalSortCollator,
             safeTrim: safeTrim,
             toFixedPointString: toFixedPointString,
             containsAllTerms: containsAllTerms,
+            sleep: sleep,
+            // variables
+            FILTER_INPUT_DELAY: 400,
             MAX_ETA: 8640000
+        };
+    };
+
+    const genHash = (string) => {
+        // origins:
+        // https://stackoverflow.com/a/8831937
+        // https://gist.github.com/hyamamoto/fd435505d29ebfa3d9716fd2be8d42f0
+        let hash = 0;
+        for (let i = 0; i < string.length; ++i)
+            hash = ((Math.imul(hash, 31) + string.charCodeAt(i)) | 0);
+        return hash;
+    };
+
+    // getHost emulate the GUI version `QString getHost(const QString &url)`
+    const getHost = (url) => {
+        // We want the hostname.
+        // If failed to parse the domain, original input should be returned
+
+        if (!/^(?:https?|udp):/i.test(url))
+            return url;
+
+        try {
+            // hack: URL can not get hostname from udp protocol
+            const parsedUrl = new URL(url.replace(/^udp:/i, "https:"));
+            // host: "example.com:8443"
+            // hostname: "example.com"
+            const host = parsedUrl.hostname;
+            if (!host)
+                return url;
+
+            return host;
+        }
+        catch (error) {
+            return url;
+        }
+    };
+
+    const createDebounceHandler = (delay, func) => {
+        let timer = -1;
+        return (...params) => {
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+                func(...params);
+
+                timer = -1;
+            }, delay);
         };
     };
 
     /*
      * JS counterpart of the function in src/misc.cpp
      */
-    const friendlyUnit = function(value, isSpeed) {
+    const friendlyUnit = (value, isSpeed) => {
         const units = [
             "QBT_TR(B)QBT_TR[CONTEXT=misc]",
             "QBT_TR(KiB)QBT_TR[CONTEXT=misc]",
@@ -66,23 +117,24 @@ window.qBittorrent.Misc = (function() {
             return "QBT_TR(Unknown)QBT_TR[CONTEXT=misc]";
 
         let i = 0;
-        while (value >= 1024.0 && i < 6) {
+        while ((value >= 1024.0) && (i < 6)) {
             value /= 1024.0;
             ++i;
         }
 
-        function friendlyUnitPrecision(sizeUnit) {
+        const friendlyUnitPrecision = (sizeUnit) => {
             if (sizeUnit <= 2) // KiB, MiB
                 return 1;
             else if (sizeUnit === 3) // GiB
                 return 2;
             else // TiB, PiB, EiB
                 return 3;
-        }
+        };
 
         let ret;
-        if (i === 0)
+        if (i === 0) {
             ret = value + " " + units[i];
+        }
         else {
             const precision = friendlyUnitPrecision(i);
             const offset = Math.pow(10, precision);
@@ -98,8 +150,8 @@ window.qBittorrent.Misc = (function() {
     /*
      * JS counterpart of the function in src/misc.cpp
      */
-    const friendlyDuration = function(seconds, maxCap = -1) {
-        if (seconds < 0 || ((seconds >= maxCap) && (maxCap >= 0)))
+    const friendlyDuration = (seconds, maxCap = -1) => {
+        if ((seconds < 0) || ((seconds >= maxCap) && (maxCap >= 0)))
             return "∞";
         if (seconds === 0)
             return "0";
@@ -107,21 +159,21 @@ window.qBittorrent.Misc = (function() {
             return "QBT_TR(< 1m)QBT_TR[CONTEXT=misc]";
         let minutes = seconds / 60;
         if (minutes < 60)
-            return "QBT_TR(%1m)QBT_TR[CONTEXT=misc]".replace("%1", parseInt(minutes));
+            return "QBT_TR(%1m)QBT_TR[CONTEXT=misc]".replace("%1", Math.floor(minutes));
         let hours = minutes / 60;
-        minutes = minutes % 60;
+        minutes %= 60;
         if (hours < 24)
-            return "QBT_TR(%1h %2m)QBT_TR[CONTEXT=misc]".replace("%1", parseInt(hours)).replace("%2", parseInt(minutes));
+            return "QBT_TR(%1h %2m)QBT_TR[CONTEXT=misc]".replace("%1", Math.floor(hours)).replace("%2", Math.floor(minutes));
         let days = hours / 24;
-        hours = hours % 24;
+        hours %= 24;
         if (days < 365)
-            return "QBT_TR(%1d %2h)QBT_TR[CONTEXT=misc]".replace("%1", parseInt(days)).replace("%2", parseInt(hours));
+            return "QBT_TR(%1d %2h)QBT_TR[CONTEXT=misc]".replace("%1", Math.floor(days)).replace("%2", Math.floor(hours));
         const years = days / 365;
-        days = days % 365;
-        return "QBT_TR(%1y %2d)QBT_TR[CONTEXT=misc]".replace("%1", parseInt(years)).replace("%2", parseInt(days));
+        days %= 365;
+        return "QBT_TR(%1y %2d)QBT_TR[CONTEXT=misc]".replace("%1", Math.floor(years)).replace("%2", Math.floor(days));
     };
 
-    const friendlyPercentage = function(value) {
+    const friendlyPercentage = (value) => {
         let percentage = (value * 100).round(1);
         if (isNaN(percentage) || (percentage < 0))
             percentage = 0;
@@ -130,54 +182,53 @@ window.qBittorrent.Misc = (function() {
         return percentage.toFixed(1) + "%";
     };
 
-    const friendlyFloat = function(value, precision) {
+    const friendlyFloat = (value, precision) => {
         return parseFloat(value).toFixed(precision);
     };
 
     /*
-     * From: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString
-     */
-    if (!Date.prototype.toISOString) {
-        (function() {
-
-            function pad(number) {
-                if (number < 10) {
-                    return '0' + number;
-                }
-                return number;
-            }
-
-            Date.prototype.toISOString = function() {
-                return this.getUTCFullYear()
-                    + '-' + pad(this.getUTCMonth() + 1)
-                    + '-' + pad(this.getUTCDate())
-                    + 'T' + pad(this.getUTCHours())
-                    + ':' + pad(this.getUTCMinutes())
-                    + ':' + pad(this.getUTCSeconds())
-                    + '.' + (this.getUTCMilliseconds() / 1000).toFixed(3).slice(2, 5)
-                    + 'Z';
-            };
-
-        }());
-    }
-
-    /*
      * JS counterpart of the function in src/misc.cpp
      */
-    const parseHtmlLinks = function(text) {
-        const exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#/%?=~_|!:,.;]*[-A-Z0-9+&@#/%=~_|])/ig;
+    const parseHtmlLinks = (text) => {
+        const exp = /(\b(https?|ftp|file):\/\/[-\w+&@#/%?=~|!:,.;]*[-\w+&@#/%=~|])/gi;
         return text.replace(exp, "<a target='_blank' rel='noopener noreferrer' href='$1'>$1</a>");
     };
 
-    const escapeHtml = function(str) {
-        const div = document.createElement('div');
-        div.appendChild(document.createTextNode(str));
-        const escapedString = div.innerHTML;
-        div.remove();
-        return escapedString;
+    const parseVersion = (versionString) => {
+        const failure = {
+            valid: false
+        };
+
+        if (typeof versionString !== "string")
+            return failure;
+
+        const tryToNumber = (str) => {
+            const num = Number(str);
+            return (isNaN(num) ? str : num);
+        };
+
+        const ver = versionString.split(".", 4).map(val => tryToNumber(val));
+        return {
+            valid: true,
+            major: ver[0],
+            minor: ver[1],
+            fix: ver[2],
+            patch: ver[3]
+        };
     };
 
-    const safeTrim = function(value) {
+    const escapeHtml = (() => {
+        const div = document.createElement("div");
+        return (str) => {
+            div.textContent = str;
+            return div.innerHTML;
+        };
+    })();
+
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Collator/Collator#parameters
+    const naturalSortCollator = new Intl.Collator(undefined, { numeric: true, usage: "sort" });
+
+    const safeTrim = (value) => {
         try {
             return value.trim();
         }
@@ -188,7 +239,7 @@ window.qBittorrent.Misc = (function() {
         }
     };
 
-    const toFixedPointString = function(number, digits) {
+    const toFixedPointString = (number, digits) => {
         // Do not round up number
         const power = Math.pow(10, digits);
         return (Math.floor(power * number) / power).toFixed(digits);
@@ -200,11 +251,11 @@ window.qBittorrent.Misc = (function() {
      * @param {Array<String>} terms terms to search for within the text
      * @returns {Boolean} true if all terms match the text, false otherwise
      */
-    const containsAllTerms = function(text, terms) {
+    const containsAllTerms = (text, terms) => {
         const textToSearch = text.toLowerCase();
-        return terms.every(function(term) {
-            const isTermRequired = (term[0] === '+');
-            const isTermExcluded = (term[0] === '-');
+        return terms.every((term) => {
+            const isTermRequired = (term[0] === "+");
+            const isTermExcluded = (term[0] === "-");
             if (isTermRequired || isTermExcluded) {
                 // ignore lonely +/-
                 if (term.length === 1)
@@ -218,7 +269,12 @@ window.qBittorrent.Misc = (function() {
         });
     };
 
+    const sleep = (ms) => {
+        return new Promise((resolve) => {
+            setTimeout(resolve, ms);
+        });
+    };
+
     return exports();
 })();
-
 Object.freeze(window.qBittorrent.Misc);

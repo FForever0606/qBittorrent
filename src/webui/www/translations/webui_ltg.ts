@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="ltg">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="ltg">
 <context>
     <name>AboutDlg</name>
     <message>
@@ -30,15 +32,43 @@
     </message>
     <message>
         <source>Original</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Create subfolder</source>
         <translation>Radeit zamapvuoci</translation>
     </message>
     <message>
-        <source>Don&apos;t create subfolder</source>
+        <source>Don't create subfolder</source>
         <translation>Naradeit zamapvuoci</translation>
+    </message>
+    <message>
+        <source>Manual</source>
+        <translation>Rūkvaļde</translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation>Automatiskuo</translation>
+    </message>
+    <message>
+        <source>Metadata received</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Files checked</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Stop condition:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>None</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Add to top of queue</source>
+        <translation type="unfinished" />
     </message>
 </context>
 <context>
@@ -75,16 +105,20 @@
         <translation>Nūstuodeit torrentus</translation>
     </message>
     <message>
-        <source>Delete torrents</source>
-        <translation>Iztreit torrentus</translation>
-    </message>
-    <message>
         <source>New Category</source>
         <translation>Jauna kategoreja</translation>
     </message>
     <message>
         <source>Edit category...</source>
         <translation>Lobuot kategoreju...</translation>
+    </message>
+    <message>
+        <source>Remove torrents</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Add subcategory...</source>
+        <translation>Pīlikt zamkategoreju...</translation>
     </message>
 </context>
 <context>
@@ -155,27 +189,27 @@
     </message>
     <message>
         <source>The port used for the Web UI must be between 1 and 65535.</source>
-        <translation>Portam priekš Tuolvaļdis panela (Web UI) juoir nu 1 da 65535.</translation>
+        <translation type="vanished">Portam priekš Tuolvaļdis panela (Web UI) juoir nu 1 da 65535.</translation>
     </message>
     <message>
         <source>Unable to log in, qBittorrent is probably unreachable.</source>
-        <translation>Dasaslēgšuonās naīsadevās, varams, ka qBittorrent navā dasnēdzuoms.</translation>
+        <translation type="vanished">Dasaslēgšuonās naīsadevās, varams, ka qBittorrent navā dasnēdzuoms.</translation>
     </message>
     <message>
         <source>Invalid Username or Password.</source>
-        <translation>Napareizs slāgvuords voi paroļs</translation>
+        <translation type="vanished">Napareizs slāgvuords voi paroļs</translation>
     </message>
     <message>
         <source>Username</source>
-        <translation>Lītuotuojs</translation>
+        <translation type="vanished">Lītuotuojs</translation>
     </message>
     <message>
         <source>Password</source>
-        <translation>Paroļs</translation>
+        <translation type="vanished">Paroļs</translation>
     </message>
     <message>
         <source>Login</source>
-        <translation>Dasaslāgt</translation>
+        <translation type="vanished">Dasaslāgt</translation>
     </message>
     <message>
         <source>Apply</source>
@@ -270,10 +304,6 @@
         <translation>Dalikt torrentus</translation>
     </message>
     <message>
-        <source>Are you sure you want to delete the selected torrents from the transfer list?</source>
-        <translation>Voi drūši zini, ka gribi nūteireit izalaseituos torrentus nū torrentu saroksta?</translation>
-    </message>
-    <message>
         <source>Save</source>
         <translation>Izglobuot</translation>
     </message>
@@ -295,7 +325,7 @@
     </message>
     <message>
         <source>Upload rate threshold must be greater than 0.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Edit</source>
@@ -315,11 +345,11 @@
     </message>
     <message>
         <source>Download rate threshold must be greater than 0.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>qBittorrent has been shutdown</source>
-        <translation>qBittorrent tika nūgrīzts</translation>
+        <translation type="vanished">qBittorrent tika nūgrīzts</translation>
     </message>
     <message>
         <source>Open documentation</source>
@@ -335,7 +365,7 @@
     </message>
     <message>
         <source>JavaScript Required! You must enable JavaScript for the Web UI to work properly</source>
-        <translation>Vajadzeigs JavaScript! Īgrīzt Javascript, lai Tuolvaļdis panelis (Web UI) dorbuotuos pareizi</translation>
+        <translation type="vanished">Vajadzeigs JavaScript! Īgrīzt Javascript, lai Tuolvaļdis panelis (Web UI) dorbuotuos pareizi</translation>
     </message>
     <message>
         <source>Name cannot be empty</source>
@@ -360,6 +390,22 @@
     <message>
         <source>Original author</source>
         <translation>Programmas radeituojs</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to remove the selected torrents from the transfer list?</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>The port used for the WebUI must be between 1 and 65535.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>%1 has been shutdown</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>JavaScript Required! You must enable JavaScript for the WebUI to work properly</source>
+        <translation type="unfinished" />
     </message>
 </context>
 <context>
@@ -425,10 +471,6 @@
         <translation>Nūstateit</translation>
     </message>
     <message>
-        <source>Delete</source>
-        <translation>Iztreit</translation>
-    </message>
-    <message>
         <source>Pause All</source>
         <translation>Nūstuodeit vysys</translation>
     </message>
@@ -467,7 +509,7 @@
     <message>
         <source>[D: %1, U: %2] qBittorrent %3</source>
         <comment>D = Download; U = Upload; %3 is qBittorrent version</comment>
-        <translation>[A: %1, N: %2] qBittorrent %3</translation>
+        <translation type="vanished">[A: %1, N: %2] qBittorrent %3</translation>
     </message>
     <message>
         <source>Alternative speed limits</source>
@@ -523,11 +565,11 @@
     </message>
     <message>
         <source>Your browser does not support this feature</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>To use this feature, the WebUI needs to be accessed over HTTPS</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Connection status: Firewalled</source>
@@ -544,10 +586,6 @@
     <message>
         <source>Download speed icon</source>
         <translation>Atsasyuteišonas dreizuma atvaigs</translation>
-    </message>
-    <message>
-        <source>Connection status</source>
-        <translation>Škārsteikla salaiduma statuss</translation>
     </message>
     <message>
         <source>Alternative speed limits: On</source>
@@ -571,7 +609,35 @@
     </message>
     <message>
         <source>Filters Sidebar</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Atsaukt</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Would you like to resume all torrents?</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Would you like to pause all torrents?</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Execution Log</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Log</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>[D: %1, U: %2]</source>
+        <translation type="unfinished" />
     </message>
 </context>
 <context>
@@ -598,7 +664,7 @@
     </message>
     <message>
         <source>Web UI</source>
-        <translation>Tuolvaļde</translation>
+        <translation type="vanished">Tuolvaļde</translation>
     </message>
     <message>
         <source>Language</source>
@@ -610,15 +676,11 @@
     </message>
     <message>
         <source>Email notification upon download completion</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <source>Run external program on torrent completion</source>
-        <translation>Palaist uoreju programu piec atsasyuteišonas dabeigšonas.</translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>IP Filtering</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Schedule the use of alternative rate limits</source>
@@ -650,11 +712,11 @@
     </message>
     <message>
         <source>Bypass authentication for clients on localhost</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Bypass authentication for clients in whitelisted IP subnets</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Update my dynamic domain name</source>
@@ -682,7 +744,7 @@
     </message>
     <message>
         <source>Automatically add torrents from:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>SMTP server:</source>
@@ -690,11 +752,11 @@
     </message>
     <message>
         <source>This server requires a secure connection (SSL)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Authentication</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Username:</source>
@@ -710,7 +772,7 @@
     </message>
     <message>
         <source>Listening Port</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Port used for incoming connections:</source>
@@ -718,7 +780,7 @@
     </message>
     <message>
         <source>Use UPnP / NAT-PMP port forwarding from my router</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Connections Limits</source>
@@ -749,10 +811,6 @@
         <translation>Lītuot:</translation>
     </message>
     <message>
-        <source>(None)</source>
-        <translation>(Nivīnu)</translation>
-    </message>
-    <message>
         <source>SOCKS4</source>
         <translation>SOCKS4</translation>
     </message>
@@ -775,10 +833,6 @@
     <message>
         <source>Use proxy for peer connections</source>
         <translation>Lītuot vidinīkserveri kūplītuotuoju salaidumim</translation>
-    </message>
-    <message>
-        <source>Use proxy only for torrents</source>
-        <translation>Lītuot vidinīkserveri tikai torrentim</translation>
     </message>
     <message>
         <source>Filter path (.dat, .p2p, .p2b):</source>
@@ -840,11 +894,11 @@
     </message>
     <message>
         <source>Apply rate limit to transport overhead</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Apply rate limit to µTP protocol</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Privacy</source>
@@ -864,15 +918,15 @@
     </message>
     <message>
         <source>Encryption mode:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Require encryption</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Disable encryption</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Enable anonymous mode</source>
@@ -900,7 +954,7 @@
     </message>
     <message>
         <source>Use UPnP / NAT-PMP to forward the port from my router</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Certificate:</source>
@@ -920,7 +974,7 @@
     </message>
     <message>
         <source>Supported parameters (case sensitive):</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>%N: Torrent name</source>
@@ -932,11 +986,11 @@
     </message>
     <message>
         <source>%F: Content path (same as root path for multifile torrent)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>%R: Root path (first torrent subdirectory path)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>%D: Save path</source>
@@ -955,16 +1009,8 @@
         <translation>%T: Niulejais trakeris</translation>
     </message>
     <message>
-        <source>Tip: Encapsulate parameter with quotation marks to avoid text being cut off at whitespace (e.g., &quot;%N&quot;)</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <source>The Web UI username must be at least 3 characters long.</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <source>The Web UI password must be at least 6 characters long.</source>
-        <translation type="unfinished"/>
+        <source>Tip: Encapsulate parameter with quotation marks to avoid text being cut off at whitespace (e.g., "%N")</source>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>minutes</source>
@@ -984,15 +1030,15 @@
     </message>
     <message>
         <source>Delete .torrent files afterwards</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Download rate threshold:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Upload rate threshold:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Change current password</source>
@@ -1004,15 +1050,11 @@
     </message>
     <message>
         <source>Use alternative Web UI</source>
-        <translation>Lītuot cytu tuolvaļdis paneļa saduri</translation>
+        <translation type="vanished">Lītuot cytu tuolvaļdis paneļa saduri</translation>
     </message>
     <message>
         <source>Default Save Path:</source>
         <translation>Nūklusiejuma izglobuošonys vīta:</translation>
-    </message>
-    <message>
-        <source>The alternative Web UI files location cannot be blank.</source>
-        <translation type="unfinished"/>
     </message>
     <message>
         <source>Do not start the download automatically</source>
@@ -1020,19 +1062,19 @@
     </message>
     <message>
         <source>Switch torrent to Manual Mode</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>When Torrent Category changed:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Relocate affected torrents</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Apply rate limit to peers on LAN</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>0 means unlimited</source>
@@ -1044,11 +1086,11 @@
     </message>
     <message>
         <source>When Default Save Path changed:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Enable Host header validation</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Security</source>
@@ -1056,7 +1098,7 @@
     </message>
     <message>
         <source>When Category Save Path changed:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>seconds</source>
@@ -1064,7 +1106,7 @@
     </message>
     <message>
         <source>Switch affected torrents to Manual Mode</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Files location:</source>
@@ -1084,19 +1126,19 @@
     </message>
     <message>
         <source>When adding a torrent</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Info: The password is saved unencrypted</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>μTP-TCP mixed mode algorithm:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Upload rate based</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>%G: Tags (separated by comma)</source>
@@ -1104,7 +1146,7 @@
     </message>
     <message>
         <source>Socket backlog size:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Enable super seeding for torrent</source>
@@ -1116,23 +1158,15 @@
     </message>
     <message>
         <source>Outstanding memory when checking torrents:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Anti-leech</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <source>Enable OS cache:</source>
-        <translation>Lītuot sistemys vydatguodu:</translation>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>When ratio reaches</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <source>When seeding time reaches</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Allow multiple connections from the same IP address:</source>
@@ -1140,7 +1174,7 @@
     </message>
     <message>
         <source>File pool size:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Any interface</source>
@@ -1172,15 +1206,11 @@
     </message>
     <message>
         <source>Send buffer watermark factor:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>libtorrent Section</source>
         <translation>libtorrent izdola</translation>
-    </message>
-    <message>
-        <source>Outgoing ports (Min) [0: Disabled]:</source>
-        <translation>Izīmūšie porti (Min) [0: Nūgrīzts]</translation>
     </message>
     <message>
         <source>Recheck torrents on completion:</source>
@@ -1188,11 +1218,11 @@
     </message>
     <message>
         <source>Allow encryption</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Send upload piece suggestions:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Enable embedded tracker:</source>
@@ -1203,12 +1233,8 @@
         <translation>Nūjimt torrentu</translation>
     </message>
     <message>
-        <source>Outgoing ports (Max) [0: Disabled]:</source>
-        <translation>Izīmūšie porti (Max) [0: Nūgrīzts]:</translation>
-    </message>
-    <message>
         <source>Asynchronous I/O threads:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>s</source>
@@ -1216,15 +1242,15 @@
     </message>
     <message>
         <source>Send buffer watermark:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Peer proportional (throttles TCP)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Fixed slots</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Advanced</source>
@@ -1236,7 +1262,7 @@
     </message>
     <message>
         <source>Upload choking algorithm:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Seeding Limits</source>
@@ -1248,11 +1274,11 @@
     </message>
     <message>
         <source>Round-robin</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Upload slots behavior:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>MiB</source>
@@ -1260,7 +1286,7 @@
     </message>
     <message>
         <source>Send buffer low watermark:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Save resume data interval:</source>
@@ -1272,7 +1298,7 @@
     </message>
     <message>
         <source>Session timeout:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Resolve peer countries:</source>
@@ -1283,32 +1309,20 @@
         <translation>nūlīgt dativi uz:</translation>
     </message>
     <message>
-        <source>Use piece extent affinity (requires libtorrent &gt;= 1.2.2):</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <source>Stop tracker timeout:</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
         <source>Ban client after consecutive failures:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Enable cookie Secure flag (requires HTTPS)</source>
         <translation>Īgrīzt glabiņu Secure flag (vajadzeigs HTTPS)</translation>
     </message>
     <message>
-        <source>UPnP lease duration [0: Permanent lease]:</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
         <source>Header: value pairs, one per line</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Add custom HTTP headers</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Filters:</source>
@@ -1319,16 +1333,8 @@
         <translation>Īgrīzt RSS laseituoju</translation>
     </message>
     <message>
-        <source>Hashing threads (requires libtorrent &gt;= 2.0):</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <source>Coalesce reads &amp; writes (requires libtorrent &lt; 2.0):</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
         <source>Peer turnover threshold percentage:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>RSS Torrent Auto Downloader</source>
@@ -1360,15 +1366,11 @@
     </message>
     <message>
         <source>Peer turnover disconnect percentage:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Maximum number of articles per feed:</source>
         <translation>Īrokstu skaits uz vīnu kanalu:</translation>
-    </message>
-    <message>
-        <source>Max concurrent HTTP announces (requires libtorrent &gt;= 1.2.7):</source>
-        <translation type="unfinished"/>
     </message>
     <message>
         <source> min</source>
@@ -1376,7 +1378,7 @@
     </message>
     <message>
         <source>Peer turnover disconnect interval:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Optional IP address to bind to:</source>
@@ -1384,7 +1386,7 @@
     </message>
     <message>
         <source>Disallow connection to peers on privileged ports:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Enable auto downloading of RSS torrents</source>
@@ -1395,24 +1397,12 @@
         <translation>RSS Gudrais epizozu fiļtrys</translation>
     </message>
     <message>
-        <source>Disk cache (requires libtorrent &lt; 2.0):</source>
-        <translation>Cītdiska vydatguods (vajadzeigs libtorrent &lt; 2.0):</translation>
-    </message>
-    <message>
-        <source>Disk cache expiry interval (requires libtorrent &lt; 2.0):</source>
-        <translation>Cītdiska vydatguoda dereiguma iņtervals (vajadzeigs libtorrent &lt; 2.0):</translation>
-    </message>
-    <message>
         <source>Validate HTTPS tracker certificate:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Peer connection protocol:</source>
         <translation>Kūplītuotuoju salaidumu protokols:</translation>
-    </message>
-    <message>
-        <source>Support internationalized domain name (IDN) (requires libtorrent &gt;= 1.2.12):</source>
-        <translation type="unfinished"/>
     </message>
     <message>
         <source>Torrent content layout:</source>
@@ -1424,19 +1414,19 @@
     </message>
     <message>
         <source>Original</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
-        <source>Don&apos;t create subfolder</source>
+        <source>Don't create subfolder</source>
         <translation>Naradeit zamapvuoci</translation>
     </message>
     <message>
         <source>Type of service (ToS) for connections to peers</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Outgoing connections per second:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Random</source>
@@ -1448,15 +1438,15 @@
     </message>
     <message>
         <source>Reannounce to all trackers when IP or port changed:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Trusted proxies list:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Enable reverse proxy support</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>%J: Info hash v2</source>
@@ -1472,51 +1462,383 @@
     </message>
     <message>
         <source>Set to 0 to let your system pick an unused port</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Server-side request forgery (SSRF) mitigation:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Disk queue size:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Log performance warnings</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Maximum outstanding requests to a single peer:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Max active checking torrents:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Memory mapped files</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>POSIX-compliant</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>This option is less effective on Linux</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
-        <source>Disk IO type (libtorrent &gt;= 2.0; requires restart):</source>
-        <translation type="unfinished"/>
+        <source>It controls the internal state update interval which in turn will affect UI updates</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Disk IO read mode:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Disable OS cache</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Disk IO write mode:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Use piece extent affinity:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Max concurrent HTTP announces:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Enable OS cache</source>
+        <translation>Lītuot sistemys vydatguodu</translation>
+    </message>
+    <message>
+        <source>Refresh interval:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>ms</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Excluded file names</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Support internationalized domain name (IDN):</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Run external program on torrent finished</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Whitelist for filtering HTTP Host header values.
+In order to defend against DNS rebinding attack,
+you should put in domain names used by WebUI server.
+
+Use ';' to split multiple entries. Can use wildcard '*'.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Run external program on torrent added</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>HTTPS certificate should not be empty</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Specify reverse proxy IPs (or subnets, e.g. 0.0.0.0/24) in order to use forwarded client address (X-Forwarded-For header). Use ';' to split multiple entries.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>HTTPS key should not be empty</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Run external program</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Files checked</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Enable port forwarding for embedded tracker:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>If checked, hostname lookups are done via the proxy.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Metadata received</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Torrent stop condition:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>None</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Example: 172.17.32.0/24, fdff:ffff:c8::/40</source>
+        <translation>Pīvadums: 172.17.32.0/24, fdff:ffff:c8::/40</translation>
+    </message>
+    <message>
+        <source>SQLite database (experimental)</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Resume data storage type (requires restart):</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Fastresume files</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Backup the log file after:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>days</source>
+        <translation>dīnu</translation>
+    </message>
+    <message>
+        <source>Log file</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Behavior</source>
+        <translation>Izavedīņs</translation>
+    </message>
+    <message>
+        <source>Delete backup logs older than:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Use proxy for BitTorrent purposes</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>years</source>
+        <translation>godim</translation>
+    </message>
+    <message>
+        <source>Save path:</source>
+        <translation>Izglobuošonas vīta:</translation>
+    </message>
+    <message>
+        <source>months</source>
+        <translation>mienešīm</translation>
+    </message>
+    <message>
+        <source>Remember Multi-Rename settings</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Use proxy for general purposes</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Use proxy for RSS purposes</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Socket send buffer size [0: system default]:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Outgoing ports (Max) [0: disabled]:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Socket receive buffer size [0: system default]:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Use Subcategories</source>
+        <translation>Lītuot zamkategorejas</translation>
+    </message>
+    <message>
+        <source>Add to top of queue</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Stop tracker timeout [0: disabled]:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Outgoing ports (Min) [0: disabled]:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>UPnP lease duration [0: permanent lease]:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Bdecode depth limit:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Bdecode token limit:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>When total seeding time reaches</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>(None)</source>
+        <translation>(Nivīnu)</translation>
+    </message>
+    <message>
+        <source>Python executable path (may require restart):</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Resets to default if empty</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Perform hostname lookup via proxy</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>If &amp;quot;mixed mode&amp;quot; is enabled, I2P torrents are allowed to also get peers from other sources than the tracker, and connect to regular IPs, not providing any anonymization. This may be useful if the user is not interested in the anonymization of I2P, but still wants to be able to connect to I2P peers.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>DHT bootstrap nodes:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>When inactive seeding time reaches</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Mixed mode</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>.torrent file size limit:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>(Auto detect if empty)</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Keep unselected files in ".unwanted" folder</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Enable Mark-of-the-Web (MOTW) for downloaded files (require macOS or Windows):</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source> sec</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P outbound quantity:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P inbound quantity:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Hashing threads:</source>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Physical memory (RAM) usage limit:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Use alternative WebUI</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Disk cache expiry interval:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P outbound length:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P (Experimental)</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Disk IO type (requires restart):</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>The alternative WebUI files location cannot be blank.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Disk cache:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Write-through</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>WebUI</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>The WebUI password must be at least 6 characters long.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Coalesce reads &amp;amp; writes:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>I2P inbound length:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>It appends the text to the window title to help distinguish qBittorent instances</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>The WebUI username must be at least 3 characters long.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Same host request delay:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Customize application instance name:</source>
+        <translation type="unfinished" />
     </message>
 </context>
 <context>
@@ -1583,7 +1905,7 @@
     </message>
     <message>
         <source>Are you sure you want to permanently ban the selected peers?</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Copy IP:port</source>
@@ -1595,7 +1917,11 @@
     </message>
     <message>
         <source>Add peers...</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Peer ID Client</source>
+        <translation type="unfinished" />
     </message>
 </context>
 <context>
@@ -1818,20 +2144,80 @@
         <source>Progress:</source>
         <translation>Progress</translation>
     </message>
+    <message>
+        <source>Use regular expressions</source>
+        <translation>Lītuot Reguļaras izsaceibas</translation>
+    </message>
+    <message>
+        <source>Filename</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Filename + Extension</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Enumerate Files</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Rename failed: file or folder already exists</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Toggle Selection</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Replacement Input</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Replace</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Extension</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Replace All</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Include files</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Include folders</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Search Files</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Case sensitive</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Match all occurrences</source>
+        <translation type="unfinished" />
+    </message>
 </context>
 <context>
     <name>ScanFoldersModel</name>
     <message>
         <source>Monitored Folder</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Override Save Location</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Monitored folder</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Default save location</source>
@@ -1869,11 +2255,11 @@
     </message>
     <message>
         <source>Read cache hits:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Average time in queue:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Connected peers:</source>
@@ -1909,11 +2295,11 @@
     </message>
     <message>
         <source>Write cache overload:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Read cache overload:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Total queued size:</source>
@@ -2033,6 +2419,14 @@
     <message>
         <source>Checking (0)</source>
         <translation>Puorbaud (0)</translation>
+    </message>
+    <message>
+        <source>Moving (%1)</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Moving (0)</source>
+        <translation type="unfinished" />
     </message>
 </context>
 <context>
@@ -2186,6 +2580,10 @@
         <source>Availability</source>
         <translation>Daīmamums</translation>
     </message>
+    <message>
+        <source>Reannounce In</source>
+        <translation type="unfinished" />
+    </message>
 </context>
 <context>
     <name>TrackerListWidget</name>
@@ -2242,10 +2640,6 @@
         <translation>Puorspīst trakera adresi</translation>
     </message>
     <message>
-        <source>Add a new tracker...</source>
-        <translation>Pīlikt jaunu trakeri...</translation>
-    </message>
-    <message>
         <source>Edit tracker URL...</source>
         <translation>Lobuot trakera adresi...</translation>
     </message>
@@ -2287,22 +2681,34 @@
     </message>
     <message>
         <source>Total Size</source>
-        <translation type="unfinished"/>
+        <translation>Kūpeigais lelums</translation>
     </message>
     <message>
         <source>Times Downloaded</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Add trackers...</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Renamed</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Original</source>
+        <translation type="unfinished" />
     </message>
 </context>
 <context>
     <name>TrackersAdditionDialog</name>
     <message>
-        <source>Trackers addition dialog</source>
-        <translation>Trakeru pīlikšona</translation>
-    </message>
-    <message>
         <source>List of trackers to add (one per line):</source>
         <translation>Saroksts ar trakeriem kurus dalikt (pa vīnam katrā aiļā): </translation>
+    </message>
+    <message>
+        <source>Add trackers</source>
+        <translation type="unfinished" />
     </message>
 </context>
 <context>
@@ -2399,6 +2805,10 @@
         <source>Trackers</source>
         <translation>Trakeri</translation>
     </message>
+    <message>
+        <source>Collapse/expand</source>
+        <translation type="unfinished" />
+    </message>
 </context>
 <context>
     <name>TransferListWidget</name>
@@ -2428,11 +2838,6 @@
         <source>Pause</source>
         <comment>Pause the torrent</comment>
         <translation>Nūstateit</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <comment>Delete the torrent</comment>
-        <translation>Iztreit</translation>
     </message>
     <message>
         <source>Limit share ratio...</source>
@@ -2507,10 +2912,6 @@
     <message>
         <source>Download in sequential order</source>
         <translation>Atsasyuteit saksteiguo parādā</translation>
-    </message>
-    <message>
-        <source>Force Recheck</source>
-        <translation>Dastateiga puorvēre</translation>
     </message>
     <message>
         <source>New Category</source>
@@ -2590,7 +2991,23 @@
     </message>
     <message>
         <source>Export .torrent</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Rename Files...</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Renaming</source>
+        <translation>Puorsaukšona</translation>
+    </message>
+    <message>
+        <source>Comment</source>
+        <translation type="unfinished" />
     </message>
 </context>
 <context>
@@ -2616,8 +3033,12 @@
         <translation>reitings</translation>
     </message>
     <message>
-        <source>minutes</source>
-        <translation>mynotu</translation>
+        <source>total minutes</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>inactive minutes</source>
+        <translation type="unfinished" />
     </message>
 </context>
 <context>
@@ -2626,16 +3047,12 @@
 <context>
     <name>confirmDeletionDlg</name>
     <message>
-        <source>Deletion confirmation</source>
-        <translation>Apstyprynuot iztreišonu</translation>
+        <source>Also permanently delete the files</source>
+        <translation type="unfinished" />
     </message>
     <message>
-        <source>Also delete the files on the hard disk</source>
-        <translation>Iztreit failus i iz cītdiska</translation>
-    </message>
-    <message>
-        <source>Deletion confirmation - qBittorrent</source>
-        <translation>Apstyprynuot iztreišonu - qBittorrent</translation>
+        <source>Remove torrent(s)</source>
+        <translation type="unfinished" />
     </message>
 </context>
 <context>
@@ -2815,7 +3232,7 @@
     </message>
     <message>
         <source>Increase window width to display additional filters</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>to</source>
@@ -2823,11 +3240,19 @@
     </message>
     <message>
         <source>Results</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>showing</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Click the "Search plugins..." button at the bottom right of the window to install some.</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>There aren't any search plugins installed.</source>
+        <translation type="unfinished" />
     </message>
 </context>
 <context>
@@ -2857,8 +3282,8 @@
         <translation>Īgrīzts</translation>
     </message>
     <message>
-        <source>Warning: Be sure to comply with your country&apos;s copyright laws when downloading torrents from any of these search engines.</source>
-        <translation type="unfinished"/>
+        <source>Warning: Be sure to comply with your country's copyright laws when downloading torrents from any of these search engines.</source>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Check for updates</source>
@@ -2953,10 +3378,6 @@
         <translation>Pīlikt byrku...</translation>
     </message>
     <message>
-        <source>Delete torrents</source>
-        <translation>Iztreit torrentus</translation>
-    </message>
-    <message>
         <source>Tag:</source>
         <translation>Byrka:</translation>
     </message>
@@ -2979,6 +3400,10 @@
     <message>
         <source>Remove tag</source>
         <translation>Nūjimt byrku</translation>
+    </message>
+    <message>
+        <source>Remove torrents</source>
+        <translation type="unfinished" />
     </message>
 </context>
 <context>
@@ -3060,7 +3485,7 @@
     </message>
     <message>
         <source>The free IP to Country Lite database by DB-IP is used for resolving the countries of peers. The database is licensed under the Creative Commons Attribution 4.0 International License</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Authors</source>
@@ -3072,11 +3497,11 @@
     </message>
     <message>
         <source>qBittorrent Mascot</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>qBittorrent icon</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
 </context>
 <context>
@@ -3140,7 +3565,7 @@
     </message>
     <message>
         <source>Please choose a new name for this RSS feed</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Please choose a folder name</source>
@@ -3152,7 +3577,7 @@
     </message>
     <message>
         <source>Update all</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Delete</source>
@@ -3164,11 +3589,11 @@
     </message>
     <message>
         <source>Mark items read</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Update all feeds</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Copy feed URL</source>
@@ -3176,7 +3601,7 @@
     </message>
     <message>
         <source>Torrents: (double-click to download)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Open news URL</source>
@@ -3200,7 +3625,7 @@
     </message>
     <message>
         <source>Update</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Folder name:</source>
@@ -3243,11 +3668,11 @@
     </message>
     <message>
         <source>* to match zero or more of any characters</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source> will match all articles.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Episode filter rules: </source>
@@ -3279,7 +3704,7 @@
     </message>
     <message>
         <source>? to match any single character</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Matches articles based on episode filter.</source>
@@ -3291,23 +3716,23 @@
     </message>
     <message>
         <source>Regex mode: use Perl-compatible regular expressions</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>| is used as OR operator</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Clear downloaded episodes</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Whitespaces count as AND operators (all words, any order)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>An expression with an empty %1 clause (e.g. %2)</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Example: </source>
@@ -3319,7 +3744,7 @@
     </message>
     <message>
         <source>Are you sure you want to clear the list of downloaded episodes for the selected rule?</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Must Contain:</source>
@@ -3347,7 +3772,7 @@
     </message>
     <message>
         <source>Are you sure you want to remove the selected download rules?</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Use global settings</source>
@@ -3415,7 +3840,7 @@
     </message>
     <message>
         <source>If word order is important use * instead of whitespace.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Add Paused:</source>
@@ -3427,11 +3852,11 @@
     </message>
     <message>
         <source>Wildcard mode: you can use</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source> will exclude all articles.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Delete rule</source>
@@ -3451,13 +3876,13 @@
     </message>
     <message>
         <source>Clear downloaded episodes...</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
         <source>Smart Episode Filter will check the episode number to prevent downloading of duplicates.
 Supports the formats: S01E01, 1x1, 2017.12.31 and 31.12.2017 (Date formats also support - as a separator)</source>
         <translation>Gudrais epizozu filtrys izraudzeis epizozu numerus, lai nūgrīztu divkuorteigu atsasyuteišonu.
-Formats: S01E01, 1x1, 2017.12.31 i 31.12.2017 (Datam škiramsimbola &quot;.&quot; vītā var lītuot arī &quot;-&quot;)</translation>
+Formats: S01E01, 1x1, 2017.12.31 i 31.12.2017 (Datam škiramsimbola "." vītā var lītuot arī "-")</translation>
     </message>
     <message>
         <source>Torrent content layout:</source>
@@ -3469,19 +3894,19 @@ Formats: S01E01, 1x1, 2017.12.31 i 31.12.2017 (Datam škiramsimbola &quot;.&quot
     </message>
     <message>
         <source>Original</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
     </message>
     <message>
-        <source>Don&apos;t create subfolder</source>
+        <source>Don't create subfolder</source>
         <translation>Naradeit zamapvuoci</translation>
+    </message>
+    <message>
+        <source>Add Tags:</source>
+        <translation type="unfinished" />
     </message>
 </context>
 <context>
     <name>TrackerFiltersList</name>
-    <message>
-        <source>Delete torrents</source>
-        <translation>Iztreit torrentus</translation>
-    </message>
     <message>
         <source>Resume torrents</source>
         <translation>Aizsuokt torrentus</translation>
@@ -3498,6 +3923,10 @@ Formats: S01E01, 1x1, 2017.12.31 i 31.12.2017 (Datam škiramsimbola &quot;.&quot
         <source>Pause torrents</source>
         <translation>Nūstuodeit torrentus</translation>
     </message>
+    <message>
+        <source>Remove torrents</source>
+        <translation type="unfinished" />
+    </message>
 </context>
 <context>
     <name>FeedListWidget</name>
@@ -3507,7 +3936,142 @@ Formats: S01E01, 1x1, 2017.12.31 i 31.12.2017 (Datam škiramsimbola &quot;.&quot
     </message>
     <message>
         <source>Unread</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished" />
+    </message>
+</context>
+<context>
+    <name>ExecutionLogWidget</name>
+    <message>
+        <source>General</source>
+        <translation>Vyscaureigi</translation>
+    </message>
+    <message>
+        <source>Blocked</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation>Nazynoms</translation>
+    </message>
+    <message>
+        <source>All</source>
+        <translation>Vysys</translation>
+    </message>
+    <message>
+        <source>showing</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>Puorspīst</translation>
+    </message>
+    <message>
+        <source>Select All</source>
+        <translation>Izlaseit vysys</translation>
+    </message>
+    <message>
+        <source>ID</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Log Type</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Viereibu</translation>
+    </message>
+    <message>
+        <source>Information Messages</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Warning Messages</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Filter logs</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Blocked IPs</source>
+        <translation>Nūblokētās IP</translation>
+    </message>
+    <message>
+        <source>out of</source>
+        <translation>nu</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Statuss</translation>
+    </message>
+    <message>
+        <source>Timestamp</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Clear All</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Message</source>
+        <translation>Viestejums</translation>
+    </message>
+    <message>
+        <source>Log Levels:</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Reason</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>item</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>IP</source>
+        <translation>IP</translation>
+    </message>
+    <message>
+        <source>Banned</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Normal Messages</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Critical</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Critical Messages</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Normal</source>
+        <translation>Norma</translation>
+    </message>
+    <message>
+        <source>items</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Results</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished" />
+    </message>
+    <message>
+        <source>Choose a log level...</source>
+        <translation type="unfinished" />
     </message>
 </context>
 </TS>
