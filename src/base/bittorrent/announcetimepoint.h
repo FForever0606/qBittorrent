@@ -1,6 +1,6 @@
 /*
  * Bittorrent Client using Qt and libtorrent.
- * Copyright (C) 2024  sledgehammer999 <hammered999@gmail.com>
+ * Copyright (C) 2024  Vladimir Golovnev <glassez@yandex.ru>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -26,31 +26,11 @@
  * exception statement from your version.
  */
 
-"use strict";
+#pragma once
 
-window.qBittorrent ??= {};
-window.qBittorrent.ColorScheme ??= (() => {
-    const exports = () => {
-        return {
-            update,
-        };
-    };
+#include <chrono>
 
-    const LocalPreferences = new window.qBittorrent.LocalPreferences.LocalPreferences();
-    const colorSchemeQuery = window.matchMedia("(prefers-color-scheme: dark)");
-
-    const update = () => {
-        const root = document.documentElement;
-        const colorScheme = LocalPreferences.get("color_scheme");
-        const validScheme = (colorScheme === "light") || (colorScheme === "dark");
-        const isDark = colorSchemeQuery.matches;
-        root.classList.toggle("dark", ((!validScheme && isDark) || (colorScheme === "dark")));
-    };
-
-    colorSchemeQuery.addEventListener("change", update);
-
-    return exports();
-})();
-Object.freeze(window.qBittorrent.ColorScheme);
-
-window.qBittorrent.ColorScheme.update();
+namespace BitTorrent
+{
+    using AnnounceTimePoint = std::chrono::high_resolution_clock::time_point;
+}

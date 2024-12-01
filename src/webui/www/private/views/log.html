@@ -96,8 +96,8 @@
                 <option value="8">QBT_TR(Critical Messages)QBT_TR[CONTEXT=ExecutionLogWidget]</option>
             </select>
 
-            <input type="text" id="filterTextInput" onkeyup="window.qBittorrent.Log.filterTextChanged()" placeholder="QBT_TR(Filter logs)QBT_TR[CONTEXT=ExecutionLogWidget]" aria-label="QBT_TR(Filter logs)QBT_TR[CONTEXT=ExecutionLogWidget]" autocomplete="off" autocorrect="off" autocapitalize="none">
-            <button type="button" title="Clear input" onclick="javascript:document.querySelector('#filterTextInput').value='';window.qBittorrent.Log.filterTextChanged();">QBT_TR(Clear)QBT_TR[CONTEXT=ExecutionLogWidget]</button>
+            <input type="text" id="filterTextInput" oninput="window.qBittorrent.Log.filterTextChanged()" placeholder="QBT_TR(Filter logs)QBT_TR[CONTEXT=ExecutionLogWidget]" aria-label="QBT_TR(Filter logs)QBT_TR[CONTEXT=ExecutionLogWidget]" autocomplete="off" autocorrect="off" autocapitalize="none">
+            <button type="button" title="Clear input" onclick="javascript:document.getElementById('filterTextInput').value='';window.qBittorrent.Log.filterTextChanged();">QBT_TR(Clear)QBT_TR[CONTEXT=ExecutionLogWidget]</button>
         </div>
 
         <div id="logFilterSummary">
@@ -188,12 +188,8 @@
         let selectedLogLevels = JSON.parse(LocalPreferences.get("qbt_selected_log_levels")) || ["1", "2", "4", "8"];
 
         const init = () => {
-            $("logLevelSelect").getElements("option").each((x) => {
-                if (selectedLogLevels.indexOf(x.value.toString()) !== -1)
-                    x.selected = true;
-                else
-                    x.selected = false;
-            });
+            for (const option of $("logLevelSelect").options)
+                option.toggleAttribute("selected", selectedLogLevels.includes(option.value));
 
             selectBox = new vanillaSelectBox("#logLevelSelect", {
                 maxHeight: 200,
@@ -210,7 +206,7 @@
             });
 
             const logTableContextMenu = new window.qBittorrent.ContextMenu.ContextMenu({
-                targets: ".logTableRow",
+                targets: ":is(#logMessageView, #logPeerView) tr",
                 menu: "logTableMenu",
                 actions: {
                     Clear: () => {
@@ -347,10 +343,10 @@
             if (curTab === "main") {
                 url = new URI("api/v2/log/main");
                 url.setData({
-                    normal: selectedLogLevels.indexOf("1") !== -1,
-                    info: selectedLogLevels.indexOf("2") !== -1,
-                    warning: selectedLogLevels.indexOf("4") !== -1,
-                    critical: selectedLogLevels.indexOf("8") !== -1
+                    normal: selectedLogLevels.includes("1"),
+                    info: selectedLogLevels.includes("2"),
+                    warning: selectedLogLevels.includes("4"),
+                    critical: selectedLogLevels.includes("8")
                 });
             }
             else {
@@ -401,7 +397,7 @@
                                 };
                             }
                             tableInfo[curTab].instance.updateRowData(row);
-                            tableInfo[curTab].last_id = Math.max(response[i].id.toInt(), tableInfo[curTab].last_id);
+                            tableInfo[curTab].last_id = Math.max(Number(response[i].id), tableInfo[curTab].last_id);
                         }
 
                         tableInfo[curTab].instance.updateTable();

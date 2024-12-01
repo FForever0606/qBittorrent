@@ -137,7 +137,7 @@
                     alert(error);
                 },
                 onSuccess: (response) => {
-                    window.qBittorrent.Client.closeWindow("cookiesPage");
+                    window.qBittorrent.Client.closeWindow(document.getElementById("cookiesPage"));
                 }
             }).send();
         };
@@ -178,7 +178,7 @@
                 addCookie();
             });
 
-            document.querySelector("#saveButton").addEventListener("click", (event) => {
+            document.getElementById("saveButton").addEventListener("click", (event) => {
                 save();
             });
         };

@@ -30,7 +30,6 @@
 #include "sessionimpl.h"
 
 #include <algorithm>
-#include <chrono>
 #include <cstdint>
 #include <ctime>
 #include <queue>
@@ -58,6 +57,7 @@
 #include <libtorrent/session_status.hpp>
 #include <libtorrent/torrent_info.hpp>
 
+#include <QDateTime>
 #include <QDeadlineTimer>
 #include <QDebug>
 #include <QDir>
@@ -86,6 +86,7 @@
 #include "base/utils/net.h"
 #include "base/utils/number.h"
 #include "base/utils/random.h"
+#include "base/utils/string.h"
 #include "base/version.h"
 #include "bandwidthscheduler.h"
 #include "bencoderesumedatastorage.h"
@@ -105,6 +106,7 @@
 #include "torrentimpl.h"
 #include "tracker.h"
 #include "trackerentry.h"
+#include "trackerentrystatus.h"
 
 using namespace std::chrono_literals;
 using namespace BitTorrent;
@@ -222,7 +224,7 @@ namespace
     {
         try
         {
-            return QString::fromLatin1(address.to_string().c_str());
+            return Utils::String::fromLatin1(address.to_string());
         }
         catch (const std::exception &)
         {
@@ -1602,16 +1604,16 @@ void SessionImpl::endStartup(ResumeSessionContext *context)
         m_wakeupCheckTimer = new QTimer(this);
         connect(m_wakeupCheckTimer, &QTimer::timeout, this, [this]
         {
-            const auto now = QDateTime::currentDateTime();
-            if (m_wakeupCheckTimestamp.secsTo(now) > 100)
+            const auto now = std::chrono::steady_clock::now();
+            if ((now - m_wakeupCheckTimestamp) > 100s)
             {
                 LogMsg(tr("System wake-up event detected. Re-announcing to all the trackers..."));
                 reannounceToAllTrackers();
             }
 
-            m_wakeupCheckTimestamp = QDateTime::currentDateTime();
+            m_wakeupCheckTimestamp = now;
         });
-        m_wakeupCheckTimestamp = QDateTime::currentDateTime();
+        m_wakeupCheckTimestamp = std::chrono::steady_clock::now();
         m_wakeupCheckTimer->start(30s);
 
         m_isRestored = true;
@@ -5511,11 +5513,6 @@ void SessionImpl::setTorrentContentLayout(const TorrentContentLayout value)
 // Read alerts sent by libtorrent session
 void SessionImpl::readAlerts()
 {
-    // cache current datetime of Qt and libtorrent clocks in order
-    // to optimize conversion of time points from lt to Qt clocks
-    m_ltNow = lt::clock_type::now();
-    m_qNow = QDateTime::currentDateTime();
-
     const std::vector<lt::alert *> alerts = getPendingAlerts();
 
     Q_ASSERT(m_loadedTorrents.isEmpty());
@@ -5831,7 +5828,7 @@ void SessionImpl::handleTorrentDeleteFailedAlert(const lt::torrent_delete_failed
 #else
     const auto torrentID = TorrentID::fromInfoHash(alert->info_hash);
 #endif
-    const auto errorMessage = alert->error ? QString::fromLocal8Bit(alert->error.message().c_str()) : QString();
+    const auto errorMessage = alert->error ? Utils::String::fromLocal8Bit(alert->error.message()) : QString();
     handleRemovedTorrent(torrentID, errorMessage);
 }
 
@@ -5989,7 +5986,7 @@ void SessionImpl::handleListenFailedAlert(const lt::listen_failed_alert *alert)
     const QString proto {toString(alert->socket_type)};
     LogMsg(tr("Failed to listen on IP. IP: \"%1\". Port: \"%2/%3\". Reason: \"%4\"")
         .arg(toString(alert->address), proto, QString::number(alert->port)
-            , QString::fromLocal8Bit(alert->error.message().c_str())), Log::CRITICAL);
+            , Utils::String::fromLocal8Bit(alert->error.message())), Log::CRITICAL);
 }
 
 void SessionImpl::handleExternalIPAlert(const lt::external_ip_alert *alert)
@@ -6215,7 +6212,7 @@ void SessionImpl::handleSocks5Alert(const lt::socks5_alert *alert) const
         const QString endpoint = (addr.is_v6() ? u"[%1]:%2"_s : u"%1:%2"_s)
                 .arg(QString::fromStdString(addr.to_string()), QString::number(alert->ip.port()));
         LogMsg(tr("SOCKS5 proxy error. Address: %1. Message: \"%2\".")
-                .arg(endpoint, QString::fromLocal8Bit(alert->error.message().c_str()))
+                .arg(endpoint, Utils::String::fromLocal8Bit(alert->error.message()))
                 , Log::WARNING);
     }
 }
@@ -6393,10 +6390,4 @@ void SessionImpl::handleRemovedTorrent(const TorrentID &torrentID, const QString
     }
 
     m_removingTorrents.erase(removingTorrentDataIter);
-}
-
-QDateTime SessionImpl::fromLTTimePoint32(const libtorrent::time_point32 &timePoint) const
-{
-    const auto secsSinceNow = lt::duration_cast<lt::seconds>(timePoint - m_ltNow + lt::milliseconds(500)).count();
-    return m_qNow.addSecs(secsSinceNow);
 }
